@@ -72,11 +72,13 @@ Plug 'tpope/vim-fugitive'               " best git wrapper of all time
 
 " tags
 Plug 'ludovicchabant/vim-gutentags'
+
 " command line fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
 " convert vim into an awesome IDE
+Plug 'sheerun/vim-polyglot'             " syntax highliting for many languages
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 Plug 'Yggdroot/indentLine'              " show indentation levels
 
@@ -122,6 +124,11 @@ let g:lightline = {
             \   'gutentags': 'gutentags#statusline'
             \ },
             \ }
+"
+" plugin 'vim-cpp-enhanced-highlight'(part of 'vim-polyglot')
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1 " not sure if it has some effect
+let g:cpp_class_decl_highlight = 1
 "
 " plugin 'indentLine'
 let g:indentLine_char = '┊'
