@@ -82,6 +82,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'   " colorize trailing whitespaces
 Plug 'sheerun/vim-polyglot'             " syntax highliting for many languages
 Plug 'shime/vim-livedown'
+Plug 'terryma/vim-multiple-cursors'     " need to figure out how it works
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 Plug 'Yggdroot/indentLine'              " show indentation levels
 
