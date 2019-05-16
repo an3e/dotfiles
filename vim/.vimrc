@@ -271,3 +271,55 @@ nnoremap <leader>o :tabprevious<CR>
 packloadall             " load all plugins
 silent! helptags ALL    " load help files for all plugins
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                               tricks to remember
+"
+" NORMAL mode
+" C / c$    clear till EOL & enter INSERT mode
+" s / cl    clear one character & enter INSERT mode
+" S / ^C    clear current line & enter INSERT mode
+" gUiW      capitalize current word
+"
+" <v>       enter character-wise VISUAL mode (toggle INSERT & char-wise VISUAL mode)
+" <V>       enter line-wise VISUAL mode
+" <C-v>     enter block-wise VISUAL mode
+"
+" >>   Indent line by shiftwidth spaces
+" <<   De-indent line by shiftwidth spaces
+" 5>>  Indent 5 lines
+" 5==  Re-indent 5 lines
+"
+" >%   Increase indent of a braced or bracketed block (place cursor on brace first)
+" =%   Reindent a braced or bracketed block (cursor on brace)
+" <%   Decrease indent of a braced or bracketed block (cursor on brace)
+" ]p   Paste text, aligning indentation with surroundings
+
+" =i{  Re-indent the 'inner block', i.e. the contents of the block
+" =a{  Re-indent 'a block', i.e. block and containing braces
+" =2a{ Re-indent '2 blocks', i.e. this block and containing block
+"
+" >i{  Increase inner block indent
+" <i{  Decrease inner block indent
+"
+" commands
+" :lcd {path}   set working directory for current window
+" :windo lcd {path}  set working directory for all windows
+
+" VISUAL mode
+" gv        reselect the last visual selection
+
+" INSERT mode
+" <c-h>     delete back one character (backspace)
+" <c-w>     delete back one word
+" <c-u>     delete back to start of line
+"
+" registers
+" "+        clipboard register
+" ".        last inserted text
+" ":        most recently executed command
+" "9p       paste content of register "9 after the current line
+" "%        current file path (starting from the directory where vim was first opened)
+"           :let @+=@%  copy current file path into clipboard register
+" qa        record macro 'a'
+" @@        repeat the most recently used macro
+"
