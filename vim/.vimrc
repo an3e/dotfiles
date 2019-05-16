@@ -76,6 +76,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
+" convert vim into an awesome IDE
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 call plug#end()
 
 
@@ -129,6 +131,13 @@ augroup GutentagsLightlineRefresher
     autocmd User GutentagsUpdating call lightline#update()
     autocmd User GutentagsUpdated call lightline#update()
 augroup END
+" plugin 'YouCompleteMe'
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_goto_buffer_command = 'split-or-existing-window'
+"
 " plugin 'fzf'
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 let g:fzf_layout = { 'down': '~30%' }
@@ -161,6 +170,21 @@ inoremap <F3> <C-o><C-]>
 nnoremap <S-F3> <C-t>
 inoremap <S-F3> <C-o><C-t>
 
+" YouCompleteMe plugin
+nnoremap <F4>        :leftabove vertical YcmCompleter GoTo<CR>
+inoremap <F4>   <C-o>:leftabove vertical YcmCompleter GoTo<CR>
+nnoremap <S-F4>      :YcmCompleter GoToImprecise   <CR>
+inoremap <S-F4> <C-o>:YcmCompleter GoToImprecise   <CR>
+nnoremap <F5>        :YcmForceCompileAndDiagnostics<CR>
+inoremap <F5>   <C-o>:YcmForceCompileAndDiagnostics<CR>
+nnoremap <F6>        :YcmCompleter GetType         <CR>
+inoremap <F6>   <C-o>:YcmCompleter GetType         <CR>
+nnoremap <S-F6>      :YcmCompleter GetTypeImpercise<CR>
+inoremap <S-F6> <C-o>:YcmCompleter GetTypeImpercise<CR>
+" accept fixit proposals from YouCompleteMe
+nnoremap <F9> :YcmCompleter FixIt<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                control key shortcuts
 " Fast tab navigation
 nnoremap <C-t> :tabnew<CR>
@@ -198,6 +222,13 @@ nnoremap <leader>gl :Gpull<CR>
 nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
+"
+" plugin YouCompleteMe
+nnoremap <leader>ged :YcmCompleter GetDoc<CR>
+nnoremap <leader>gep :YcmCompleter GetParent<CR>
+nnoremap <leader>gtc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gtf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gth :YcmCompleter GoToHeader<CR>
 "
 " use 'i' & 'o' to move between tabs in a way similar to moving between jumps (<Ctrl-io>)
 nnoremap <leader>i :tabnext<CR>
