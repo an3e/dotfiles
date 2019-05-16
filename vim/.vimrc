@@ -165,3 +165,8 @@ nnoremap <leader>gl :Gpull<CR>
 nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
+"
+" use 'i' & 'o' to move between tabs in a way similar to moving between jumps (<Ctrl-io>)
+nnoremap <leader>i :tabnext<CR>
+nnoremap <leader>o :tabprevious<CR>
+
