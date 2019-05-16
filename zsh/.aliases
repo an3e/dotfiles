@@ -1,0 +1,8 @@
+alias ssc='ssh ehrlich@corplin1002'
+alias ssb='ssh ehrlich@corpsrv5007'
+alias sst='ssh ehrlich@corpsrv5016'
+alias ssy='ssh ehrlich@cngyocto'
+alias ssp='sshpass -p ehrlich ssh ehrlich@192.168.142.143'
+alias ssn='ssh ehrlich@192.168.134.51'
+alias sso='ssh 192.168.178.119'
+
