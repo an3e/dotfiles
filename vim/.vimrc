@@ -78,6 +78,8 @@ Plug 'junegunn/fzf.vim'
 
 " convert vim into an awesome IDE
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
+Plug 'Yggdroot/indentLine'              " show indentation levels
+
 call plug#end()
 
 
@@ -120,6 +122,9 @@ let g:lightline = {
             \   'gutentags': 'gutentags#statusline'
             \ },
             \ }
+"
+" plugin 'indentLine'
+let g:indentLine_char = '┊'
 "
 " plugin 'vim-gutentags'
 let g:gutentags_cache_dir = '~/.cache/gutentags'
