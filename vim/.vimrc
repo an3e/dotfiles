@@ -35,3 +35,18 @@ filetype plugin on
 " fold method
 "set foldmethod=syntax
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                               plugin management
+"
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+"
+call plug#begin('~/.vim/plugged')
+
+" general
+Plug 'tpope/vim-sensible'               " a universal set of defaults
+
+call plug#end()
