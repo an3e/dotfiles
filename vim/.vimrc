@@ -128,6 +128,17 @@ inoremap <C-t> <C-o>:tabnew<CR>
 nnoremap <C-d> <C-o>:tabclose<CR>
 inoremap <C-d> <C-o>:tabclose<CR>
 "
+" Fast split/window navigation with <Ctrl-hjkl>
+nnoremap <C-h> <C-w><C-h>
+inoremap <C-h> <C-o><C-w><C-h>
+nnoremap <C-j> <C-w><C-j>
+inoremap <C-j> <C-o><C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+inoremap <C-k> <C-o><C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+inoremap <C-l> <C-o><C-w><C-l>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             leader key shortcuts
 " Remap leader key
 let mapleader = ","
