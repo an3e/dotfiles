@@ -1,0 +1,43 @@
+#! /bin/bash
+
+# regular color definitions
+export COLOR_NRM_BLK='\[\e[00;30m\]'    # Black
+export COLOR_NRM_RED='\[\e[00;31m\]'    # Red
+export COLOR_NRM_GRN='\[\e[00;32m\]'    # Green
+export COLOR_NRM_YEL='\[\e[00;33m\]'    # Yellow
+export COLOR_NRM_BLU='\[\e[00;34m\]'    # Blue
+export COLOR_NRM_PRL='\[\e[00;35m\]'    # Purple
+export COLOR_NRM_CYN='\[\e[00;36m\]'    # Cyan
+export COLOR_NRM_WHT='\[\e[00;37m\]'    # White
+
+# bold color definitions
+export COLOR_BLD_BLK='\[\e[01;30m\]'    # Black
+export COLOR_BLD_RED='\[\e[01;31m\]'    # Red
+export COLOR_BLD_GRN='\[\e[01;32m\]'    # Green
+export COLOR_BLD_YEL='\[\e[01;33m\]'    # Yellow
+export COLOR_BLD_BLU='\[\e[01;34m\]'    # Blue
+export COLOR_BLD_PRL='\[\e[01;35m\]'    # Purple
+export COLOR_BLD_CYN='\[\e[01;36m\]'    # Cyan
+export COLOR_BLD_WHT='\[\e[01;37m\]'    # White
+
+# underline color definitions
+export COLOR_ULN_BLK='\[\e[04;30m\]'    # Black
+export COLOR_ULN_RED='\[\e[04;31m\]'    # Red
+export COLOR_ULN_GRN='\[\e[04;32m\]'    # Green
+export COLOR_ULN_YEL='\[\e[04;33m\]'    # Yellow
+export COLOR_ULN_BLU='\[\e[04;34m\]'    # Blue
+export COLOR_ULN_PRL='\[\e[04;35m\]'    # Purple
+export COLOR_ULN_CYN='\[\e[04;36m\]'    # Cyan
+export COLOR_ULN_WHT='\[\e[04;37m\]'    # White
+
+# background color definitions
+export COLOR_BGD_BLK='\[\e[40m\]'       # Black
+export COLOR_BGD_RED='\[\e[41m\]'       # Red
+export COLOR_BGD_GRN='\[\e[42m\]'       # Green
+export COLOR_BGD_YEL='\[\e[43m\]'       # Yellow
+export COLOR_BGD_BLU='\[\e[44m\]'       # Blue
+export COLOR_BGD_PRL='\[\e[45m\]'       # Purple
+export COLOR_BGD_CYN='\[\e[46m\]'       # Cyan
+export COLOR_BGD_WHT='\[\e[47m\]'       # White
+
+export COLOR_RST='\[\e[00m\]'
