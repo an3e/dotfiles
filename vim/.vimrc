@@ -147,6 +147,20 @@ let g:fzf_colors =
       \ 'header':  ['fg', 'Comment'] }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                        functional keys shortcuts
+" open tag preview window (:ptag <name_under_cursor)
+nnoremap <F2> <C-w>}
+inoremap <F2> <C-o><C-w>}
+" close tag preview window
+nnoremap <S-F2> <C-w>z
+inoremap <S-F2> <C-o><C-w>z
+" jump to tag under cursor
+nnoremap <F3> <C-]>
+inoremap <F3> <C-o><C-]>
+" return from the jump
+nnoremap <S-F3> <C-t>
+inoremap <S-F3> <C-o><C-t>
+
 "                                control key shortcuts
 " Fast tab navigation
 nnoremap <C-t> :tabnew<CR>
