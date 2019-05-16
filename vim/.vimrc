@@ -170,3 +170,8 @@ nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>i :tabnext<CR>
 nnoremap <leader>o :tabprevious<CR>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+packloadall             " load all plugins
+silent! helptags ALL    " load help files for all plugins
+
