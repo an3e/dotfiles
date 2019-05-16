@@ -72,6 +72,7 @@ Plug 'tpope/vim-fugitive'               " best git wrapper of all time
 
 " tags
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
 
 " command line fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -204,6 +205,10 @@ inoremap <S-F6> <C-o>:YcmCompleter GetTypeImpercise<CR>
 " toggle whitespaces
 nnoremap <F7> :set list!<CR>
 inoremap <F7> <C-o>:set list!<CR>
+
+" toggle the tagbar (needs https://github.com/majutsushi/tagbar)
+nnoremap <F8> :TagbarToggle<CR>
+inoremap <F8> :TagbarToggle<CR>
 
 " accept fixit proposals from YouCompleteMe
 nnoremap <F9> :YcmCompleter FixIt<CR>
