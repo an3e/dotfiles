@@ -80,6 +80,7 @@ Plug 'junegunn/fzf.vim'
 " convert vim into an awesome IDE
 Plug 'ntpeters/vim-better-whitespace'   " colorize trailing whitespaces
 Plug 'sheerun/vim-polyglot'             " syntax highliting for many languages
+Plug 'shime/vim-livedown'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 Plug 'Yggdroot/indentLine'              " show indentation levels
 
@@ -252,6 +253,8 @@ nnoremap <leader>gep :YcmCompleter GetParent<CR>
 nnoremap <leader>gtc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gtf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gth :YcmCompleter GoToHeader<CR>
+"
+nnoremap <leader>ldt :LivedownToggle<CR>
 "
 " use 'i' & 'o' to move between tabs in a way similar to moving between jumps (<Ctrl-io>)
 nnoremap <leader>i :tabnext<CR>
