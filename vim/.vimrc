@@ -51,5 +51,6 @@ Plug 'tpope/vim-sensible'               " a universal set of defaults
 
 " look & feel
 Plug 'itchyny/lightline.vim'            " configurable statusline
+Plug 'mhinz/vim-startify'               " nice welcome screen
 
 call plug#end()
