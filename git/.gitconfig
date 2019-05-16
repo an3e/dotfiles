@@ -1,0 +1,7 @@
+[user]
+	name = Andrei Ehrlich
+	email = andrei.ehrlich@corpuls.com
+[status]
+	submodulesummary = 1
+[core]
+	editor = vim
