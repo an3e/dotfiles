@@ -243,6 +243,7 @@ nnoremap <leader>fa :Ag<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fc :Colors<CR>
 nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fw :Windows<CR>
 "
 " plugin vim-fugitive
 nnoremap <leader>gb :Gblame<CR>
