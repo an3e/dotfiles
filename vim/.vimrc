@@ -70,6 +70,8 @@ Plug 'tomasr/molokai'
 " git
 Plug 'tpope/vim-fugitive'               " best git wrapper of all time
 
+" tags
+Plug 'ludovicchabant/vim-gutentags'
 " command line fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -102,6 +104,12 @@ if (has("autocmd") && !has("gui_running"))
     augroup END
 endif
 colorscheme onedark
+"
+" plugin 'vim-gutentags'
+let g:gutentags_cache_dir = '~/.cache/gutentags'
+let g:gutentags_project_root = ['.git/']        " '/' to make sure submodules are ignored
+let g:gutentags_add_default_project_roots = 0   " do not add any default project roots
+" make sure gutentags correctly updates it's status in lightline
 " plugin 'fzf'
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 let g:fzf_layout = { 'down': '~30%' }
