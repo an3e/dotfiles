@@ -78,6 +78,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
 " convert vim into an awesome IDE
+Plug 'ntpeters/vim-better-whitespace'   " colorize trailing whitespaces
 Plug 'sheerun/vim-polyglot'             " syntax highliting for many languages
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 Plug 'Yggdroot/indentLine'              " show indentation levels
@@ -143,6 +144,11 @@ augroup GutentagsLightlineRefresher
     autocmd User GutentagsUpdating call lightline#update()
     autocmd User GutentagsUpdated call lightline#update()
 augroup END
+"
+" plugin 'vim-better-whitespaces'
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+"
 " plugin 'YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
