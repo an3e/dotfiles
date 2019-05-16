@@ -83,6 +83,14 @@ let g:fzf_colors =
       \ 'header':  ['fg', 'Comment'] }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                control key shortcuts
+" Fast tab navigation
+nnoremap <C-t> :tabnew<CR>
+inoremap <C-t> <C-o>:tabnew<CR>
+" do not use <C-w> here since <C-w>T moves current window to new tab
+nnoremap <C-d> <C-o>:tabclose<CR>
+inoremap <C-d> <C-o>:tabclose<CR>
+"
 "                             leader key shortcuts
 " Remap leader key
 let mapleader = ","
