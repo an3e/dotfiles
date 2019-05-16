@@ -65,7 +65,6 @@ Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'sjl/badwolf'
 Plug 'tomasiser/vim-code-dark'
-Plug 'tomasr/molokai'
 
 " git
 Plug 'tpope/vim-fugitive'               " best git wrapper of all time
