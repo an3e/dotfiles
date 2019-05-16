@@ -49,4 +49,7 @@ call plug#begin('~/.vim/plugged')
 " general
 Plug 'tpope/vim-sensible'               " a universal set of defaults
 
+" look & feel
+Plug 'itchyny/lightline.vim'            " configurable statusline
+
 call plug#end()
