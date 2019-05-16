@@ -105,11 +105,30 @@ if (has("autocmd") && !has("gui_running"))
 endif
 colorscheme onedark
 "
+" plugin 'lightline'
+let g:lightline = {
+            \ 'colorscheme': 'onedark',
+            \ 'active': {
+            \ 'left': [ [ 'mode', 'paste' ],
+            \           [ 'gitbranch', 'readonly', 'filename', 'modified' ],
+            \           [ 'gutentags' ] ],
+            \ },
+            \ 'component_function': {
+            \   'gitbranch': 'fugitive#head',
+            \   'gutentags': 'gutentags#statusline'
+            \ },
+            \ }
+"
 " plugin 'vim-gutentags'
 let g:gutentags_cache_dir = '~/.cache/gutentags'
 let g:gutentags_project_root = ['.git/']        " '/' to make sure submodules are ignored
 let g:gutentags_add_default_project_roots = 0   " do not add any default project roots
 " make sure gutentags correctly updates it's status in lightline
+augroup GutentagsLightlineRefresher
+    autocmd!
+    autocmd User GutentagsUpdating call lightline#update()
+    autocmd User GutentagsUpdated call lightline#update()
+augroup END
 " plugin 'fzf'
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 let g:fzf_layout = { 'down': '~30%' }
