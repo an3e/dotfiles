@@ -52,6 +52,20 @@ Plug 'tpope/vim-sensible'               " a universal set of defaults
 " look & feel
 Plug 'itchyny/lightline.vim'            " configurable statusline
 Plug 'mhinz/vim-startify'               " nice welcome screen
+" themes
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'danilo-augusto/vim-afterglow'
+Plug 'jacoborus/tender.vim'
+Plug 'jnurmine/Zenburn'
+Plug 'joshdick/onedark.vim'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'KeitaNakamura/neodark.vim'
+Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
+Plug 'sjl/badwolf'
+Plug 'tomasiser/vim-code-dark'
+Plug 'tomasr/molokai'
 
 " git
 Plug 'tpope/vim-fugitive'               " best git wrapper of all time
@@ -65,6 +79,29 @@ call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           plugin customization
+"
+" Needs vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+    set term=xterm
+    set t_Co=256
+    set termguicolors
+endif
+let g:onedark_termcolors = 256
+let g:onedark_terminal_italics = 1
+" onedark.vim override: Don't set a background color when running in a terminal;
+" just use the terminal's background color
+" `gui` is the hex color code used in GUI mode/nvim true-color mode
+" `cterm` is the color code used in 256-color mode
+" `cterm16` is the color code used in 16-color mode
+if (has("autocmd") && !has("gui_running"))
+    augroup colorset
+        autocmd!
+        let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
+        " `bg` will not be styled since there is no `bg` setting
+        autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white })
+    augroup END
+endif
+colorscheme onedark
 " plugin 'fzf'
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 let g:fzf_layout = { 'down': '~30%' }
