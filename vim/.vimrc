@@ -193,6 +193,11 @@ nnoremap <F6>        :YcmCompleter GetType         <CR>
 inoremap <F6>   <C-o>:YcmCompleter GetType         <CR>
 nnoremap <S-F6>      :YcmCompleter GetTypeImpercise<CR>
 inoremap <S-F6> <C-o>:YcmCompleter GetTypeImpercise<CR>
+
+" toggle whitespaces
+nnoremap <F7> :set list!<CR>
+inoremap <F7> <C-o>:set list!<CR>
+
 " accept fixit proposals from YouCompleteMe
 nnoremap <F9> :YcmCompleter FixIt<CR>
 
