@@ -53,6 +53,9 @@ Plug 'tpope/vim-sensible'               " a universal set of defaults
 Plug 'itchyny/lightline.vim'            " configurable statusline
 Plug 'mhinz/vim-startify'               " nice welcome screen
 
+" git
+Plug 'tpope/vim-fugitive'               " best git wrapper of all time
+
 " command line fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -89,3 +92,12 @@ nnoremap <leader>fa :Ag<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fc :Colors<CR>
 nnoremap <leader>ff :Files<CR>
+"
+" plugin vim-fugitive
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gc :Gcommit -s -v<CR>
+nnoremap <leader>gd :Gvdiff<CR>
+nnoremap <leader>gl :Gpull<CR>
+nnoremap <leader>gp :Gpush<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gw :Gwrite<CR>
