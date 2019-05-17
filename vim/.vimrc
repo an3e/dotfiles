@@ -193,17 +193,17 @@ inoremap <S-F3> <C-o><C-t>
 " YouCompleteMe plugin
 nnoremap <F4>        :leftabove vertical YcmCompleter GoTo<CR>
 inoremap <F4>   <C-o>:leftabove vertical YcmCompleter GoTo<CR>
-nnoremap <S-F4>      :YcmCompleter GoToImprecise   <CR>
-inoremap <S-F4> <C-o>:YcmCompleter GoToImprecise   <CR>
+nnoremap <S-F4>      :YcmCompleter GoToImprecise<CR>
+inoremap <S-F4> <C-o>:YcmCompleter GoToImprecise<CR>
 nnoremap <F5>        :YcmForceCompileAndDiagnostics<CR>
 inoremap <F5>   <C-o>:YcmForceCompileAndDiagnostics<CR>
-nnoremap <F6>        :YcmCompleter GetType         <CR>
-inoremap <F6>   <C-o>:YcmCompleter GetType         <CR>
+nnoremap <F6>        :YcmCompleter GetType<CR>
+inoremap <F6>   <C-o>:YcmCompleter GetType<CR>
 nnoremap <S-F6>      :YcmCompleter GetTypeImpercise<CR>
 inoremap <S-F6> <C-o>:YcmCompleter GetTypeImpercise<CR>
 
 " toggle whitespaces
-nnoremap <F7> :set list!<CR>
+nnoremap <F7>      :set list!<CR>
 inoremap <F7> <C-o>:set list!<CR>
 
 " toggle the tagbar (needs https://github.com/majutsushi/tagbar)
@@ -216,7 +216,7 @@ nnoremap <F9> :YcmCompleter FixIt<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                control key shortcuts
 " Fast tab navigation
-nnoremap <C-t> :tabnew<CR>
+nnoremap <C-t>      :tabnew<CR>
 inoremap <C-t> <C-o>:tabnew<CR>
 " do not use <C-w> here since <C-w>T moves current window to new tab
 nnoremap <C-d> <C-o>:tabclose<CR>
