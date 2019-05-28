@@ -220,7 +220,7 @@ inoremap <C-l> <C-o><C-w><C-l>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             leader key shortcuts
 " Remap leader key
-let mapleader = ","
+let mapleader = "\<Space>"
 "
 " plugin 'fzf'
 nnoremap <leader>fa :Ag<CR>
