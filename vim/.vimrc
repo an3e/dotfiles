@@ -65,6 +65,7 @@ Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'sjl/badwolf'
 Plug 'tomasiser/vim-code-dark'
+Plug 'flrnprz/plastic.vim'
 
 " git
 Plug 'tpope/vim-fugitive'               " best git wrapper of all time
@@ -97,12 +98,15 @@ if (has("termguicolors"))
     set t_Co=256
     set termguicolors
 endif
-let g:onedark_termcolors = 256
-colorscheme onedark
+"
+"let g:onedark_termcolors = 256
+"colorscheme onedark
+"
+colorscheme plastic
 "
 " plugin 'lightline'
 let g:lightline = {
-            \ 'colorscheme': 'onedark',
+            \ 'colorscheme': 'plastic',
             \ 'active': {
             \ 'left': [ [ 'mode', 'paste' ],
             \           [ 'gitbranch', 'readonly', 'filename', 'modified' ],
