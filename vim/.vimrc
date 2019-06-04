@@ -95,18 +95,15 @@ call plug#end()
 " Needs vim >=8.0 or Neovim >= 0.1.5
 if (has("termguicolors"))
     set term=xterm
-    set t_Co=256
     set termguicolors
 endif
 "
-"let g:onedark_termcolors = 256
-"colorscheme onedark
-"
-colorscheme plastic
+let g:onedark_termcolors = 256
+colorscheme onedark
 "
 " plugin 'lightline'
 let g:lightline = {
-            \ 'colorscheme': 'plastic',
+            \ 'colorscheme': 'onedark',
             \ 'active': {
             \ 'left': [ [ 'mode', 'paste' ],
             \           [ 'gitbranch', 'readonly', 'filename', 'modified' ],
