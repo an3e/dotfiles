@@ -14,13 +14,13 @@ set relativenumber  " show line numbers relative to cursor position
 set cursorline      " mark current line
 set showmatch       " show matching brackets
 filetype plugin on
-"
 set colorcolumn=91  " position of vertical line
-set nowrap          " never wrap lines
 
 " searching in files
 set hlsearch        " highlight search results
-set noic            " be case sensitive
+set noincsearch     " be case sensitive
+set nowrap          " never wrap lines
+set scrolloff=2     " minimum number of lines to show above and below the cursor
 
 " general
 set mouse=a " use mouse
