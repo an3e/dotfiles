@@ -199,12 +199,15 @@ inoremap <F8> :TagbarToggle<CR>
 " accept fixit proposals from YouCompleteMe
 nnoremap <F9> :YcmCompleter FixIt<CR>
 
+nnoremap <F10> :tabnext<CR>
+nnoremap <S-F10> :tabprevious<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                control key shortcuts
 " Fast tab navigation
 nnoremap <C-t>      :tabnew<CR>
 inoremap <C-t> <C-o>:tabnew<CR>
-" do not use <C-w> here since <C-w>T moves current window to new tab
+" close current tab (do not use <C-w> here since <C-w>T moves current window to new tab)
 nnoremap <C-d> <C-o>:tabclose<CR>
 inoremap <C-d> <C-o>:tabclose<CR>
 "
