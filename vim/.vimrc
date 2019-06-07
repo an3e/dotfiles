@@ -111,6 +111,9 @@ let g:lightline = {
             \   'gutentags': 'gutentags#statusline'
             \ },
             \ }
+" plugiv 'vim-startify'
+let g:startify_session_autoload = 1     " load sessions automatically
+let g:startify_session_persistence = 1  " save sessions on exit
 "
 " plugin 'vim-cpp-enhanced-highlight'(part of 'vim-polyglot')
 let g:cpp_class_scope_highlight = 1
