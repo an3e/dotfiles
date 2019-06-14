@@ -80,6 +80,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'   " colorize trailing whitespaces
 Plug 'sheerun/vim-polyglot'             " syntax highliting for many languages
 Plug 'shime/vim-livedown'
+Plug 'SirVer/ultisnips'                 " snippets management
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 Plug 'Yggdroot/indentLine'              " show indentation levels
 
@@ -137,6 +138,14 @@ augroup END
 " plugin 'vim-better-whitespaces'
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
+"
+"plugin UltiSnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<C-Space>"
+let g:UltiSnipsJumpForwardTrigger="<c-i>"
+let g:UltiSnipsJumpBackwardTrigger="<c-o>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 "
 " plugin 'YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion = 1
