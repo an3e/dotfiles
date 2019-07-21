@@ -72,4 +72,4 @@ do_source \
     "${HOME}/.aliases" \
     || true
 
-which neofetch &>/dev/null && neofetch
+neofetch 2>/dev/null
