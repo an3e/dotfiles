@@ -2,22 +2,54 @@
 
 set -e  # exit immediately when a command exits with a non-zero status.
 set -u  # exit when an undefined variable is referenced.
+set -x
 
-SCRIPTS_DIR="${HOME}/.scripts/"
-[[ ! -d "${SCRIPTS_DIR}" ]] \
-    && mkdir -p "${SCRIPTS_DIR}" \
-    && git clone git@github.com:an3e/scripts.git "${SCRIPTS_DIR}"
+do_run() {
+    stow --ignore=".directory" --adopt --verbose "${@}"
+}
 
-source "${SCRIPTS_DIR%/}/lib/runtime.sh"
+do_stow() {
 
-isExecuted || return 1;
-isInstalled git stow || exit 3;
+    [[ -d "${1}" ]] || return 0;
 
-[[ $# -gt 0 ]] || set -- $(ls ./)
+    case "${1}" in
+        htop)
+            mkdir -p "${HOME}/.config"
+            do_run "${1}" \
+                -t "${HOME}/.config" \
+                -d "${1}/.config"
+            ;;
 
-for __component in ${@}
-do
-    [[ -d "${__component}" ]] || continue;
-    stow -v -R ${__component}
-done
+        scripts)
+            mkdir -p "${HOME}/.scripts"
+            do_run "${1}" \
+                -t "${HOME}/.scripts"
+            ;;
+
+        *)
+            do_run "${1}"
+            ;;
+    esac
+}
+
+do_setup() {
+
+	local -r REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)"
+	[[ -n "${REPO_ROOT}" ]] || return 1;
+
+	export SCRIPTS_LIB_DIR="${REPO_ROOT%/}/scripts/lib"
+	source "${SCRIPTS_LIB_DIR%/}/runtime.sh"
+
+	isExecuted || return 3;
+	isInstalled git stow || return 5;
+
+	[[ $# -gt 0 ]] || set -- $(ls ./)
+
+	for __component in ${@}
+	do
+        do_stow "${__component}"
+	done
+}
+
+do_setup ${@}
 
