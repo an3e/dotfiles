@@ -123,6 +123,7 @@ let g:cpp_class_decl_highlight = 1
 "
 " plugin 'indentLine'
 let g:indentLine_char = '┊'
+let g:indentLine_conceallevel = 0
 "
 " plugin 'vim-gutentags'
 let g:gutentags_cache_dir = '~/.cache/gutentags'
