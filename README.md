@@ -2,13 +2,12 @@
 
 #### Usage:
 
-*   Setup all dotfiles be running
-~~~
-$ ./setup.sh ./*
-~~~
-*   Setup only particular dotfiles by explicitly specifying them. To use
-dotfiles of bash only execute:
-~~~
-$ ./setup.sh bash
-~~~
+*   Before setting up you need to initialize submodules:  
+    `$ git submodule update --init --remote --recursive`
+
+*   Setup all dotfiles:  
+    `$ ./setup.sh`
+
+*   Setup only bash dotfiles:  
+    `$ ./setup.sh bash`
 
