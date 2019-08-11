@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 set -e  # exit immediately when a command exits with a non-zero status.
-set -u  # exit when an undefined variable is referenced.
-set -x
+set -u  # exit immediately when an undefined variable is referenced.
+#set -x
 
 do_run() {
     stow --ignore=".directory" --adopt --verbose "${@}"
@@ -34,21 +34,21 @@ do_stow() {
 
 do_setup() {
 
-	local -r REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)"
-	[[ -n "${REPO_ROOT}" ]] || return 1;
+    local -r REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)"
+    [[ -n "${REPO_ROOT}" ]] || return 1;
 
-	export SCRIPTS_LIB_DIR="${REPO_ROOT%/}/scripts/lib"
-	source "${SCRIPTS_LIB_DIR%/}/runtime.sh"
+    export SCRIPTS_LIB_DIR="${REPO_ROOT%/}/scripts/lib"
+    source "${SCRIPTS_LIB_DIR%/}/runtime.sh"
 
-	isExecuted || return 3;
-	isInstalled git stow || return 5;
+    isExecuted || return 3;
+    isInstalled git stow || return 5;
 
-	[[ $# -gt 0 ]] || set -- $(ls ./)
+    [[ $# -gt 0 ]] || set -- $(ls ./)
 
-	for __component in ${@}
-	do
+    for __component in ${@}
+    do
         do_stow "${__component}"
-	done
+    done
 }
 
 do_setup ${@}
