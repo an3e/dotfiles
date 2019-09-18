@@ -4,11 +4,11 @@
 set expandtab       " expand tabs to spaces
 set tabstop=4       " number of spaces tab is counted for
 set softtabstop=0   " cause <BS> key to delete correct number of spaces
-set shiftwidth=4    " number of spaces to use for autoindent
+set shiftwidth=4    " number of spaces to use for auto indent
 set cindent         " turn on C style indentation
 set listchars+=space:·,trail:·,tab:»·,eol:¶
 
-" highliting options
+" highlighting options
 set number          " show line numbers
 set relativenumber  " show line numbers relative to cursor position
 set cursorline      " mark current line
@@ -24,11 +24,11 @@ set scrolloff=2     " minimum number of lines to show above and below the cursor
 
 " general
 set mouse=a " use mouse
-set showcmd " show incmplete commands in the bottom right corner
+set showcmd " show incomplete commands in the bottom right corner
 
 " spell checker
-" set spell           " uses english language by default
-" set spelllang=en,de " change default language of spell checker
+set spell           " uses English language by default
+set spelllang=en_us " change default language of spell checker
 
 " fold method
 "set foldmethod=syntax
@@ -48,7 +48,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'               " a universal set of defaults
 
 " look & feel
-Plug 'itchyny/lightline.vim'            " configurable statusline
+Plug 'itchyny/lightline.vim'            " configurable status line
 Plug 'mhinz/vim-startify'               " nice welcome screen
 " themes
 Plug 'altercation/vim-colors-solarized'
@@ -77,8 +77,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
 " convert vim into an awesome IDE
-Plug 'ntpeters/vim-better-whitespace'   " colorize trailing whitespaces
-Plug 'sheerun/vim-polyglot'             " syntax highliting for many languages
+Plug 'ntpeters/vim-better-whitespace'   " colorize trailing white spaces
+Plug 'sheerun/vim-polyglot'             " syntax highlighting for many languages
 Plug 'shime/vim-livedown'
 Plug 'SirVer/ultisnips'                 " snippets management
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
@@ -113,7 +113,7 @@ let g:lightline = {
             \   'gutentags': 'gutentags#statusline'
             \ },
             \ }
-" plugiv 'vim-startify'
+" plugin 'vim-startify'
 let g:startify_session_autoload = 1     " load sessions automatically
 let g:startify_session_persistence = 1  " save sessions on exit
 "
@@ -128,7 +128,7 @@ let g:indentLine_conceallevel = 0
 "
 " plugin 'vim-gutentags'
 let g:gutentags_cache_dir = '~/.cache/gutentags'
-let g:gutentags_project_root = ['.git/']        " '/' to make sure submodules are ignored
+let g:gutentags_project_root = ['.git/']        " '/' to make sure sub modules are ignored
 let g:gutentags_add_default_project_roots = 0   " do not add any default project roots
 " make sure gutentags correctly updates it's status in lightline
 augroup GutentagsLightlineRefresher
