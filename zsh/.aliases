@@ -1,5 +1,7 @@
 which nvim &>/dev/null && alias vim='nvim'
 
+alias gdammit='git commit --amend --no-edit'
+
 alias ssc='ssh ehrlich@corplin1002'
 alias ssb='ssh ehrlich@corpsrv5007'
 alias sst='ssh ehrlich@corpsrv5016'
