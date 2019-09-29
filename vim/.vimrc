@@ -216,7 +216,7 @@ let g:clang_format#style_options = {
 \ "SpacesInSquareBrackets": "false",
 \ "SortUsingDeclarations": "false",
 \ "Standard": "Cpp11",
-\ "TabWidth": 8,
+\ "TabWidth": 4,
 \ "UseTab": "Never"}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
