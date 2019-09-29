@@ -51,7 +51,6 @@ Plug 'tpope/vim-sensible'               " a universal set of defaults
 Plug 'itchyny/lightline.vim'            " configurable status line
 Plug 'mhinz/vim-startify'               " nice welcome screen
 " themes
-Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'jacoborus/tender.vim'
