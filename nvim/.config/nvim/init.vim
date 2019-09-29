@@ -62,6 +62,7 @@ Plug 'KeitaNakamura/neodark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'sjl/badwolf'
+Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'tomasiser/vim-code-dark'
 Plug 'flrnprz/plastic.vim'
 
