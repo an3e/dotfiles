@@ -6,6 +6,11 @@ export GIT_DISCOVERY_ACROSS_FILESYSTEM="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 export COMPLETION_WAITING_DOTS="true"
 
+[[ -d "${HOME}/.fzf/bin" ]] \
+    && export PATH="${PATH}:${HOME}/.fzf/bin" \
+    && source "${HOME}/.fzf/shell/completion.zsh" \
+    && source "${HOME}/.fzf/shell/key-bindings.zsh"
+
 SCRIPTS_DIR="${HOME}/.scripts"
 SCRIPTS_LIB_DIR="${SCRIPTS_DIR}/lib"
 [[ -d "${SCRIPTS_LIB_DIR}" ]] \
