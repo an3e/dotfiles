@@ -11,6 +11,19 @@ export COMPLETION_WAITING_DOTS="true"
     && source "${HOME}/.fzf/shell/completion.zsh" \
     && source "${HOME}/.fzf/shell/key-bindings.zsh"
 
+FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+which ag &>/dev/null \
+   && export FZF_DEFAULT_COMMAND
+
+FZF_DEFAULT_OPTS="--preview \
+    '[[ $(file --mime {}) =~ binary ]] &&
+        echo {} is a binary file || (
+            bat --style=numbers --color=always {} ||
+            cat {}) 2> /dev/null | head -500'"
+which bat &>/dev/null \
+    && export FZF_DEFAULT_OPTS \
+    && export BAT_THEME="zenburn"
+
 SCRIPTS_DIR="${HOME}/.scripts"
 SCRIPTS_LIB_DIR="${SCRIPTS_DIR}/lib"
 [[ -d "${SCRIPTS_LIB_DIR}" ]] \
