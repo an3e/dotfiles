@@ -148,6 +148,8 @@ let g:UltiSnipsJumpForwardTrigger="<c-i>"
 let g:UltiSnipsJumpBackwardTrigger="<c-o>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
+let g:UltiSnipsSnippetDirectories=['UltiSnips']
 "
 " plugin 'YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion = 1
