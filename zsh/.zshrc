@@ -68,6 +68,8 @@ do_source() {
 ################################################################################
 
 do_source \
+    "${HOME}/.fzf/shell/completion.zsh" \
+    "${HOME}/.fzf/shell/key-bindings.zsh" \
     "${HOME}/.zshrc_ext" \
     "${HOME}/.aliases" \
     || true
