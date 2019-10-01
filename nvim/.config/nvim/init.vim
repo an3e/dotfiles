@@ -159,7 +159,6 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_highlighting = 0
 "
 " plugin 'fzf'
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 let g:fzf_layout = { 'down': '~30%' }
 let g:fzf_colors =
     \ { 'fg':      ['fg', 'Normal'],
@@ -292,10 +291,23 @@ autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 "
 " plugin 'fzf'
-nnoremap <leader>fa :Ag<CR>
+function! FzfSearchFileNames()
+    let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+    let $FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'
+                \ --bind ctrl-f:page-down,ctrl-b:page-up"
+    let $BAT_THEME="zenburn"
+    :Files
+endfunction
+"
+function! FzfSearchFileContent()
+    let $FZF_DEFAULT_OPTS=''
+    :Ag
+endfunction
+"
+nnoremap <leader>fa :call FzfSearchFileContent()<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fc :Colors<CR>
-nnoremap <leader>ff :Files<CR>
+nnoremap <leader>ff :call FzfSearchFileNames()<CR>
 nnoremap <leader>fw :Windows<CR>
 "
 " plugin vim-fugitive
