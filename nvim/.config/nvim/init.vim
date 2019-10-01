@@ -140,6 +140,7 @@ augroup END
 " plugin 'vim-better-whitespaces'
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
 "
 "plugin UltiSnips
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
