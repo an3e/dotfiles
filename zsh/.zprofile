@@ -7,21 +7,14 @@ export GIT_DISCOVERY_ACROSS_FILESYSTEM="true"
 export COMPLETION_WAITING_DOTS="true"
 
 [[ -d "${HOME}/.fzf/bin" ]] \
-    && export PATH="${PATH}:${HOME}/.fzf/bin" \
-    && source "${HOME}/.fzf/shell/completion.zsh" \
-    && source "${HOME}/.fzf/shell/key-bindings.zsh"
+    && export PATH="${PATH}:${HOME}/.fzf/bin"
 
-FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 which ag &>/dev/null \
-   && export FZF_DEFAULT_COMMAND
+    && export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g "' \
+    && export FZF_DEFAULT_OPTS="--bind ctrl-f:page-down,ctrl-b:page-up" \
+    && export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
-FZF_DEFAULT_OPTS="--preview \
-    '[[ $(file --mime {}) =~ binary ]] &&
-        echo {} is a binary file || (
-            bat --style=numbers --color=always {} ||
-            cat {}) 2> /dev/null | head -500'"
-which bat &>/dev/null \
-    && export FZF_DEFAULT_OPTS \
+which bat \
     && export BAT_THEME="zenburn"
 
 SCRIPTS_DIR="${HOME}/.scripts"

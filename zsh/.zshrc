@@ -72,7 +72,4 @@ do_source \
     "${HOME}/.aliases" \
     || true
 
-export FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
-export BAT_THEME="zenburn"
-
 neofetch 2>/dev/null
