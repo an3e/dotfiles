@@ -74,7 +74,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 
 " command line fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " convert vim into an awesome IDE
