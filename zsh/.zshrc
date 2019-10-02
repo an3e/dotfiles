@@ -68,10 +68,10 @@ do_source() {
 ################################################################################
 
 do_source \
-    "${HOME}/.fzf/shell/completion.zsh" \
-    "${HOME}/.fzf/shell/key-bindings.zsh" \
     "${HOME}/.zshrc_ext" \
     "${HOME}/.aliases" \
     || true
 
 neofetch 2>/dev/null
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

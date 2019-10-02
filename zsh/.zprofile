@@ -6,9 +6,6 @@ export GIT_DISCOVERY_ACROSS_FILESYSTEM="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 export COMPLETION_WAITING_DOTS="true"
 
-[[ -d "${HOME}/.fzf/bin" ]] \
-    && export PATH="${PATH}:${HOME}/.fzf/bin"
-
 which ag &>/dev/null \
     && export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g "' \
     && export FZF_DEFAULT_OPTS="--bind ctrl-f:page-down,ctrl-b:page-up" \
@@ -21,7 +18,6 @@ SCRIPTS_DIR="${HOME}/.scripts"
 SCRIPTS_LIB_DIR="${SCRIPTS_DIR}/lib"
 [[ -d "${SCRIPTS_LIB_DIR}" ]] \
     && export SCRIPTS_LIB_DIR
-
 SCRIPTS_BIN_DIR="${SCRIPTS_DIR}/bin"
 [[ -d "${SCRIPTS_BIN_DIR}" ]] \
     && export PATH="${PATH}:${SCRIPTS_BIN_DIR}"
