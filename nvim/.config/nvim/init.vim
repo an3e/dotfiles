@@ -223,47 +223,6 @@ let g:clang_format#style_options = {
 \ "UseTab": "Never"}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                        functional keys shortcuts
-" open tag preview window (:ptag <name_under_cursor)
-nnoremap <F2> <C-w>}
-inoremap <F2> <C-o><C-w>}
-" close tag preview window
-nnoremap <S-F2> <C-w>z
-inoremap <S-F2> <C-o><C-w>z
-" jump to tag under cursor
-nnoremap <F3> <C-]>
-inoremap <F3> <C-o><C-]>
-" return from the jump
-nnoremap <S-F3> <C-t>
-inoremap <S-F3> <C-o><C-t>
-
-" YouCompleteMe plugin
-nnoremap <F4>        :leftabove vertical YcmCompleter GoTo<CR>
-inoremap <F4>   <C-o>:leftabove vertical YcmCompleter GoTo<CR>
-nnoremap <S-F4>      :YcmCompleter GoToImprecise<CR>
-inoremap <S-F4> <C-o>:YcmCompleter GoToImprecise<CR>
-nnoremap <F5>        :YcmForceCompileAndDiagnostics<CR>
-inoremap <F5>   <C-o>:YcmForceCompileAndDiagnostics<CR>
-nnoremap <F6>        :YcmCompleter GetType<CR>
-inoremap <F6>   <C-o>:YcmCompleter GetType<CR>
-nnoremap <S-F6>      :YcmCompleter GetTypeImpercise<CR>
-inoremap <S-F6> <C-o>:YcmCompleter GetTypeImpercise<CR>
-
-" toggle whitespaces
-nnoremap <F7>      :set list!<CR>
-inoremap <F7> <C-o>:set list!<CR>
-
-" toggle the tagbar (needs https://github.com/majutsushi/tagbar)
-nnoremap <F8> :TagbarToggle<CR>
-inoremap <F8> :TagbarToggle<CR>
-
-" accept fixit proposals from YouCompleteMe
-nnoremap <F9> :YcmCompleter FixIt<CR>
-
-nnoremap <F10> :tabnext<CR>
-nnoremap <S-F10> :tabprevious<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                control key shortcuts
 " Fast tab navigation
 nnoremap <C-t>      :tabnew<CR>
@@ -309,13 +268,13 @@ nnoremap <leader>fa :call FzfSearchFileContent()<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fc :Colors<CR>
 nnoremap <leader>ff :call FzfSearchFileNames()<CR>
+nnoremap <leader>fg :Commits<CR>
+nnoremap <leader>fh :History<CR>
+nnoremap <leader>fl :BLines<CR>
 " use preview when FzFiles runs in fullscreen
 command! -nargs=? -bang -complete=dir FzfFiles
             \ call fzf#vim#files(<q-args>, <bang>0 ? fzf#vim#with_preview('up:65%') : {}, <bang>0)
 command FzfChanges call s:fzf_changes()
-nnoremap <leader>fg :Commits<CR>
-nnoremap <leader>fh :History<CR>
-nnoremap <leader>fl :BLines<CR>
 nnoremap <leader>fv :FzfFiles!<CR>
 nnoremap <leader>fw :Windows<CR>
 "
@@ -329,17 +288,35 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
 "
 " plugin YouCompleteMe
-nnoremap <leader>ged :YcmCompleter GetDoc<CR>
-nnoremap <leader>gep :YcmCompleter GetParent<CR>
-nnoremap <leader>gtc :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gtf :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>gth :YcmCompleter GoToHeader<CR>
+nnoremap <leader>yd :YcmCompleter GetDoc<CR>
+nnoremap <leader>yp :YcmCompleter GetParent<CR>
+nnoremap <leader>yc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>yf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>yh :YcmCompleter GoToHeader<CR>
 "
 nnoremap <leader>ldt :LivedownToggle<CR>
 "
 " use 'i' & 'o' to move between tabs in a way similar to moving between jumps (<Ctrl-io>)
 nnoremap <leader>i :tabnext<CR>
 nnoremap <leader>o :tabprevious<CR>
+
+" open/close tag preview window (:ptag <name_under_cursor)
+nnoremap <leader>2 <C-w>}
+nnoremap <leader>" <C-w>z
+" jump/return to/from tag under cursor
+nnoremap <leader>3 <C-]>
+nnoremap <leader>§ <C-t>
+" open file under cursor / go to symbol declaration.
+nnoremap <leader>4 :leftabove vertical YcmCompleter GoTo<CR>
+" refresh compilation diagnostics
+nnoremap <leader>5 :YcmForceCompileAndDiagnostics<CR>
+nnoremap <leader>6 :YcmCompleter GetType<CR>
+" toggle whitespaces
+nnoremap <leader>7 :set list!<CR>
+" toggle the tagbar (needs https://github.com/majutsushi/tagbar)
+nnoremap <leader>8 :TagbarToggle<CR>
+" accept fixit proposals from YouCompleteMe
+nnoremap <leader>9 :YcmCompleter FixIt<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
