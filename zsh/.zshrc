@@ -70,8 +70,8 @@ do_source() {
 do_source \
     "${HOME}/.zshrc_ext" \
     "${HOME}/.aliases" \
+    "${HOME}/.fzf.zsh" \
     || true
 
 neofetch 2>/dev/null
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
