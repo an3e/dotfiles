@@ -4,5 +4,5 @@
 vim/*/plugged
 vim/*/autoload
 
-nvim/.config/nvim/autoload
-nvim/.config/nvim/plugged
+nvim/.config/nvim/*
+!nvim/.config/nvim/init.vim
