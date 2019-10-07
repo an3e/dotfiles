@@ -264,6 +264,11 @@ function! FzfSearchFileContent()
     :Ag
 endfunction
 "
+function! FzfSearchKeyMappings()
+    let $FZF_DEFAULT_OPTS=''
+    :Maps
+endfunction
+"
 nnoremap <leader>fa :call FzfSearchFileContent()<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fc :Colors<CR>
@@ -271,11 +276,15 @@ nnoremap <leader>ff :call FzfSearchFileNames()<CR>
 nnoremap <leader>fg :Commits<CR>
 nnoremap <leader>fh :History<CR>
 nnoremap <leader>fl :BLines<CR>
+nnoremap <leader>fm :call FzfSearchKeyMappings()<CR>
+nnoremap <leader>fs :Snippets<CR>
+nnoremap <leader>ft :Tags<CR>
 " use preview when FzFiles runs in fullscreen
 command! -nargs=? -bang -complete=dir FzfFiles
             \ call fzf#vim#files(<q-args>, <bang>0 ? fzf#vim#with_preview('up:65%') : {}, <bang>0)
 command FzfChanges call s:fzf_changes()
 nnoremap <leader>fv :FzfFiles!<CR>
+nnoremap <leader>fy :Filetypes<CR>
 nnoremap <leader>fw :Windows<CR>
 "
 " plugin vim-fugitive
