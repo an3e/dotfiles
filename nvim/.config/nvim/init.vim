@@ -296,18 +296,18 @@ nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
 "
+nnoremap <leader>ldt :LivedownToggle<CR>
+"
+" use 'i' & 'o' to move between tabs in a way similar to moving between jumps (<Ctrl-io>)
+nnoremap <leader>i :tabnext<CR>
+nnoremap <leader>o :tabprevious<CR>
+"
 " plugin YouCompleteMe
 nnoremap <leader>yd :YcmCompleter GetDoc<CR>
 nnoremap <leader>yp :YcmCompleter GetParent<CR>
 nnoremap <leader>yc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>yf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>yh :YcmCompleter GoToHeader<CR>
-"
-nnoremap <leader>ldt :LivedownToggle<CR>
-"
-" use 'i' & 'o' to move between tabs in a way similar to moving between jumps (<Ctrl-io>)
-nnoremap <leader>i :tabnext<CR>
-nnoremap <leader>o :tabprevious<CR>
 
 " open/close tag preview window (:ptag <name_under_cursor>)
 nnoremap <leader>2 <C-w>}
