@@ -228,7 +228,7 @@ let g:clang_format#style_options = {
 nnoremap <C-t>      :tabnew<CR>
 inoremap <C-t> <C-o>:tabnew<CR>
 " close current tab (do not use <C-w> here since <C-w>T moves current window to new tab)
-nnoremap <C-d> <C-o>:tabclose<CR>
+nnoremap <C-d>      :tabclose<CR>
 inoremap <C-d> <C-o>:tabclose<CR>
 "
 " Fast split/window navigation with <Ctrl-hjkl>
@@ -309,13 +309,13 @@ nnoremap <leader>ldt :LivedownToggle<CR>
 nnoremap <leader>i :tabnext<CR>
 nnoremap <leader>o :tabprevious<CR>
 
-" open/close tag preview window (:ptag <name_under_cursor)
+" open/close tag preview window (:ptag <name_under_cursor>)
 nnoremap <leader>2 <C-w>}
 nnoremap <leader>" <C-w>z
 " jump/return to/from tag under cursor
 nnoremap <leader>3 <C-]>
 nnoremap <leader>§ <C-t>
-" open file under cursor / go to symbol declaration.
+" open file under cursor / go to symbol declaration/definition.
 nnoremap <leader>4 :leftabove vertical YcmCompleter GoTo<CR>
 " refresh compilation diagnostics
 nnoremap <leader>5 :YcmForceCompileAndDiagnostics<CR>
