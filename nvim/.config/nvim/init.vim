@@ -158,6 +158,8 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_error_symbol = '✘'
+let g:ycm_warning_symbol = '⚠'
 "
 " plugin 'fzf'
 let g:fzf_layout = { 'down': '~30%' }
