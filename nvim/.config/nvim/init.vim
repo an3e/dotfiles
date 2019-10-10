@@ -36,14 +36,26 @@ set spelllang=en_us " change default language of spell checker
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               plugin management
 "
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-    !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    !python -m pip install setuptools
-    !pip3 install --upgrade --user pynvim
-    autocmd VimEnter * PlugInstall --sync
+let vimplug_path=expand('~/.config/nvim/autoload/plug.vim')
+if !filereadable(vimplug_path)
+    if !executable("curl")
+        echoerr "You have to install 'curl' or first install vim-plug manually!"
+        execute "q!"
+    elseif !executable("python")
+        echoerr "You have to install 'python' first!"
+        execute "q!"
+    elseif !executable("pip3")
+        echoerr "You have to install 'pip3' first!"
+        execute "q!"
+    else
+        echo "\nInstalling Vim-Plug...\n"
+        exec "!curl -fLo " . vimplug_path . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+        exec "!python -m pip install setuptools"
+        exec "!pip3 install --upgrade --user pynvim"
+        autocmd VimEnter * PlugInstall --sync
+    endif
 endif
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin(expand('~/.config/nvim/plugged'))
 
 " general
 Plug 'tpope/vim-sensible'               " a universal set of defaults
