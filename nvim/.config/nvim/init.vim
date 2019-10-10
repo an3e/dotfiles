@@ -13,7 +13,7 @@ set number          " show line numbers
 set relativenumber  " show line numbers relative to cursor position
 set cursorline      " mark current line
 set showmatch       " show matching brackets
-filetype plugin on
+filetype plugin indent on
 set colorcolumn=91  " position of vertical line
 
 " searching in files
