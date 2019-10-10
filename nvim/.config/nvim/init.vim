@@ -298,11 +298,18 @@ nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
 "
-nnoremap <leader>ldt :LivedownToggle<CR>
-"
-" use 'i' & 'o' to move between tabs in a way similar to moving between jumps (<Ctrl-io>)
-nnoremap <leader>i :tabnext<CR>
-nnoremap <leader>o :tabprevious<CR>
+" use 'l' & 'h' to move between tabs
+nnoremap <leader>l :tabnext<CR>
+nnoremap <leader>h :tabprevious<CR>
+
+" create new split/tab window
+nnoremap <leader>nh :new<CR>
+nnoremap <leader>nv :vnew<CR>
+nnoremap <leader>nt :tabnew<CR>
+
+" exit a session
+nnoremap <leader>q :qa<CR>
+nnoremap <leader>w :conf wqa<CR>
 "
 " plugin YouCompleteMe
 nnoremap <leader>yd :YcmCompleter GetDoc<CR>
