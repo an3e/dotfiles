@@ -314,6 +314,9 @@ nnoremap <leader>9 :YcmCompleter FixIt<CR>
 " stop highlighting
 nnoremap <leader><CR> :nohlsearch<CR>
 
+" switch CWD to the directory of the open buffer
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " TABs/indentation options
