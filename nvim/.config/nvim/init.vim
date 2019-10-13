@@ -94,7 +94,7 @@ Plug 'ntpeters/vim-better-whitespace'   " colorize trailing white spaces
 Plug 'sheerun/vim-polyglot'             " syntax highlighting for many languages
 Plug 'shime/vim-livedown'
 Plug 'SirVer/ultisnips'                 " snippets management
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 Plug 'Yggdroot/indentLine'              " show indentation levels
 Plug 'rhysd/vim-clang-format'
 
