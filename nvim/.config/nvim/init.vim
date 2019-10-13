@@ -265,7 +265,7 @@ nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gc :Gcommit -s -v<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gl :Gpull<CR>
-nnoremap <leader>gp :Gpush<CR>
+nnoremap <leader>gp :Gpush --force-with-lease<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
 
