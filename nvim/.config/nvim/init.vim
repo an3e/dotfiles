@@ -1,5 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                               plugin management
+"                             plugin management
 "
 let vimplug_path=expand('~/.config/nvim/autoload/plug.vim')
 if !filereadable(vimplug_path)
@@ -66,8 +66,8 @@ Plug 'rhysd/vim-clang-format'
 call plug#end()
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                           plugin customization
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                            plugin customization
 "
 " Needs vim >=8.0 or Neovim >= 0.1.5
 if (has("termguicolors"))
@@ -201,8 +201,8 @@ let g:clang_format#style_options = {
 \ "TabWidth": 4,
 \ "UseTab": "Never"}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                control key shortcuts
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           control key shortcuts
 "
 " Fast split/window navigation with <Ctrl-hjkl>
 nnoremap <C-h> <C-w><C-h>
@@ -214,8 +214,8 @@ inoremap <C-k> <C-o><C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 inoremap <C-l> <C-o><C-w><C-l>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                             leader key shortcuts
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                            leader key shortcuts
 " Remap leader key
 let mapleader = "\<Space>"
 "
@@ -321,7 +321,7 @@ nnoremap <leader><CR> :nohlsearch<CR>
 " switch CWD to the directory of the open buffer
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " TABs/indentation options
 set expandtab               " expand tabs to spaces
@@ -364,7 +364,7 @@ set spelllang=en_us         " change default language of spell checker
 " fold method
 "set foldmethod=syntax
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 packloadall             " load all plugins
 silent! helptags ALL    " load help files for all plugins
