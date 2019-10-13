@@ -311,6 +311,9 @@ nnoremap <leader>8 :TagbarToggle<CR>
 " accept fixit proposals from YouCompleteMe
 nnoremap <leader>9 :YcmCompleter FixIt<CR>
 
+" stop highlighting
+nnoremap <leader><CR> :nohlsearch<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " TABs/indentation options
