@@ -314,34 +314,38 @@ nnoremap <leader>9 :YcmCompleter FixIt<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " TABs/indentation options
-set expandtab       " expand tabs to spaces
-set tabstop=4       " number of spaces tab is counted for
-set softtabstop=0   " cause <BS> key to delete correct number of spaces
-set shiftwidth=4    " number of spaces to use for auto indent
-set cindent         " turn on C style indentation
+set expandtab               " expand tabs to spaces
+set tabstop=4               " number of spaces tab is counted for
+set softtabstop=0           " cause <BS> key to delete correct number of spaces
+set shiftwidth=4            " number of spaces to use for auto indent
+set cindent                 " turn on C style indentation
 set listchars+=space:·,trail:·,tab:»·,eol:¶
 
 " highlighting options
-set number          " show line numbers
-set relativenumber  " show line numbers relative to cursor position
-set cursorline      " mark current line
-set showmatch       " show matching brackets
-filetype plugin indent on
-set colorcolumn=91  " position of vertical line
+set number                  " show line numbers
+set relativenumber          " show line numbers relative to cursor position
+set cursorline              " mark current line
+set showmatch               " show matching brackets
+filetype plugin indent on   " indentation based on file type
+set colorcolumn=91          " position of vertical line
+
+" splitting
+set splitbelow              " put new split windows to the bottom of the current
+set splitright              " put new vsplit windows to the right of the current
 
 " searching in files
-set hlsearch        " highlight search results
-set noincsearch     " be case sensitive
-set nowrap          " never wrap lines
-set scrolloff=2     " minimum number of lines to show above and below the cursor
+set hlsearch                " highlight search results
+set noincsearch             " be case sensitive
+set nowrap                  " never wrap lines
+set scrolloff=2             " minimum number of lines to show above and below the cursor
 
 " general
-set mouse=a " use mouse
-set showcmd " show incomplete commands in the bottom right corner
+set mouse=a                 " use mouse
+set showcmd                 " show incomplete commands in the bottom right corner
 
 " spell checker
-set spell           " uses English language by default
-set spelllang=en_us " change default language of spell checker
+set spell                   " uses English language by default
+set spelllang=en_us         " change default language of spell checker
 
 " fold method
 "set foldmethod=syntax
