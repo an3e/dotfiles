@@ -324,6 +324,7 @@ set expandtab               " expand tabs to spaces
 set tabstop=4               " number of spaces tab is counted for
 set softtabstop=0           " cause <BS> key to delete correct number of spaces
 set shiftwidth=4            " number of spaces to use for auto indent
+filetype plugin indent on   " indentation based on file type
 set listchars+=space:·,trail:·,tab:»·,eol:¶
 
 " highlighting options
@@ -331,7 +332,6 @@ set number                  " show line numbers
 set relativenumber          " show line numbers relative to cursor position
 set cursorline              " mark current line
 set showmatch               " show matching brackets
-filetype plugin indent on   " indentation based on file type
 set colorcolumn=91          " position of vertical line
 
 " splitting
@@ -360,7 +360,7 @@ set spelllang=en_us         " change default language of spell checker
 " fold method
 "set foldmethod=syntax
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 packloadall             " load all plugins
 silent! helptags ALL    " load help files for all plugins
