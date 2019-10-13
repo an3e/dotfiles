@@ -282,6 +282,10 @@ nnoremap <leader>to :tabonly<CR>
 nnoremap <leader>l  :tabnext<CR>
 nnoremap <leader>h  :tabprevious<CR>
 
+" scrolling in buffers
+nnoremap <leader>j <PageDown>
+nnoremap <leader>k <PageUp>
+
 " exit a session
 nnoremap <leader>q :qa<CR>
 nnoremap <leader>w :conf wqa<CR>
