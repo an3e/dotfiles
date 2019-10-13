@@ -238,12 +238,6 @@ let g:clang_format#style_options = {
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                control key shortcuts
-" Fast tab navigation
-nnoremap <C-t>      :tabnew<CR>
-inoremap <C-t> <C-o>:tabnew<CR>
-" close current tab (do not use <C-w> here since <C-w>T moves current window to new tab)
-nnoremap <C-d>      :tabclose<CR>
-inoremap <C-d> <C-o>:tabclose<CR>
 "
 " Fast split/window navigation with <Ctrl-hjkl>
 nnoremap <C-h> <C-w><C-h>
@@ -309,15 +303,19 @@ nnoremap <leader>gl :Gpull<CR>
 nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
-"
-" use 'l' & 'h' to move between tabs
-nnoremap <leader>l :tabnext<CR>
-nnoremap <leader>h :tabprevious<CR>
 
 " create new split/tab window
 nnoremap <leader>nh :new<CR>
 nnoremap <leader>nv :vnew<CR>
 nnoremap <leader>nt :tabnew<CR>
+
+" working with tabs
+nnoremap <leader>tc :tabclose<CR>
+nnoremap <leader>tm :tabmove
+nnoremap <leader>tn :tabnew<CR>
+nnoremap <leader>to :tabonly<CR>
+nnoremap <leader>l  :tabnext<CR>
+nnoremap <leader>h  :tabprevious<CR>
 
 " exit a session
 nnoremap <leader>q :qa<CR>
