@@ -318,7 +318,6 @@ set expandtab               " expand tabs to spaces
 set tabstop=4               " number of spaces tab is counted for
 set softtabstop=0           " cause <BS> key to delete correct number of spaces
 set shiftwidth=4            " number of spaces to use for auto indent
-set cindent                 " turn on C style indentation
 set listchars+=space:·,trail:·,tab:»·,eol:¶
 
 " highlighting options
