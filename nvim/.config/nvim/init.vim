@@ -334,8 +334,13 @@ set splitright              " put new vsplit windows to the right of the current
 
 " searching in files
 set hlsearch                " highlight search results
-set noincsearch             " be case sensitive
+set ignorecase              " case insensitive search
+set smartcase               " case sensitive only if search contains uppercase letter
+
+" line wrapping options
 set nowrap                  " never wrap lines
+
+" scrolling
 set scrolloff=2             " minimum number of lines to show above and below the cursor
 
 " general
