@@ -266,7 +266,7 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 "
 " plugin 'fzf'
 function! FzfSearchFileNames()
-    let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+    let $FZF_DEFAULT_COMMAND = 'ag --depth -1 --hidden --ignore .git -l -g ""'
     let $FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'
                 \ --bind ctrl-f:page-down,ctrl-b:page-up"
     let $BAT_THEME="zenburn"
