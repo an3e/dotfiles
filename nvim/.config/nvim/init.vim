@@ -1,16 +1,20 @@
+function! s:is_installed(...)
+    let l:rv=1
+    for bin in a:000
+        if !executable(bin)
+            echohl WarningMsg | echo "[ " . bin . " ] is required but not found in \$PATH" | echohl None
+            let l:rv=0
+        endif
+    endfor
+    return l:rv
+endfunction
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             plugin management
 "
 let vimplug_path=expand('~/.config/nvim/autoload/plug.vim')
 if !filereadable(vimplug_path)
-    if !executable("curl")
-        echoerr "You have to install 'curl' or first install vim-plug manually!"
-        execute "q!"
-    elseif !executable("python")
-        echoerr "You have to install 'python' first!"
-        execute "q!"
-    elseif !executable("pip3")
-        echoerr "You have to install 'pip3' first!"
+    if !s:is_installed('cmake', 'curl', 'git', 'g++', 'pip3', 'python', 'python3')
         execute "q!"
     else
         echo "\nInstalling Vim-Plug...\n"
@@ -369,4 +373,5 @@ set spelllang=en_us         " change default language of spell checker
 
 packloadall             " load all plugins
 silent! helptags ALL    " load help files for all plugins
+
 
