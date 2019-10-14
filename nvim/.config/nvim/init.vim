@@ -42,6 +42,7 @@ Plug 'sjl/badwolf'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'tomasiser/vim-code-dark'
 Plug 'flrnprz/plastic.vim'
+Plug 'romainl/Apprentice'
 
 " git
 Plug 'tpope/vim-fugitive'               " best git wrapper of all time
