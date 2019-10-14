@@ -366,6 +366,12 @@ set showcmd                 " show incomplete commands in the bottom right corne
 set spell                   " uses English language by default
 set spelllang=en_us         " change default language of spell checker
 
+" save undo history
+if has("persistent_undo")
+    set undofile
+    set undodir=~/.config/nvim/undodir
+endif
+
 " fold method
 "set foldmethod=syntax
 
@@ -373,5 +379,4 @@ set spelllang=en_us         " change default language of spell checker
 
 packloadall             " load all plugins
 silent! helptags ALL    " load help files for all plugins
-
 
