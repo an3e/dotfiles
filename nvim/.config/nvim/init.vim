@@ -41,7 +41,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans.vim'
 Plug 'sjl/badwolf'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'tomasiser/vim-code-dark'
