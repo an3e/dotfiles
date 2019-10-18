@@ -2,7 +2,7 @@ function! s:is_installed(...)
     let l:rv=1
     for bin in a:000
         if !executable(bin)
-            echohl WarningMsg | echo "[ " . bin . " ] is required but not found in \$PATH" | echohl None
+            echo "[ " . bin . " ] is required but not found in \$PATH"
             let l:rv=0
         endif
     endfor
@@ -15,6 +15,7 @@ endfunction
 let vimplug_path=expand('~/.config/nvim/autoload/plug.vim')
 if !filereadable(vimplug_path)
     if !s:is_installed('cmake', 'curl', 'git', 'g++', 'pip3', 'python', 'python3')
+        call input("Please install missing utilities and retry again.")
         execute "q!"
     else
         echo "\nInstalling Vim-Plug...\n"
