@@ -172,7 +172,6 @@ if isdirectory(s:plugins_base_dir . 'fzf.vim')
     " use preview when FzFiles runs in fullscreen
     command! -nargs=? -bang -complete=dir FzfFiles
                 \ call fzf#vim#files(<q-args>, <bang>0 ? fzf#vim#with_preview('up:65%') : {}, <bang>0)
-    command FzfChanges call s:fzf_changes()
     nnoremap <leader>fv :FzfFiles!<CR>
     nnoremap <leader>fy :Filetypes<CR>
     nnoremap <leader>fw :Windows<CR>
