@@ -6,3 +6,4 @@ vim/*/autoload
 
 nvim/.config/nvim/*
 !nvim/.config/nvim/init.vim
+!nvim/.config/nvim/plugins-customized.vim
