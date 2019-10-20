@@ -1,12 +1,12 @@
-let s:base_path=expand('~/.config/nvim')
-let s:functions_path=expand(s:base_path . '/functions.vim')
+let g:base_editor_config_path=expand('~/.config/nvim')
+let s:functions_path=expand(g:base_editor_config_path . '/functions.vim')
 
 execute 'source' s:functions_path
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             plugin management
 "
-let s:vimplug_path=expand(s:base_path . '/autoload/plug.vim')
+let s:vimplug_path=expand(g:base_editor_config_path . '/autoload/plug.vim')
 if !filereadable(s:vimplug_path)
     if !IsInstalled('cmake', 'curl', 'git', 'g++', 'pip3', 'python', 'python3')
         echoerr "Continuing without any customizations..."

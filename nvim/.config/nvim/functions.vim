@@ -1,3 +1,7 @@
+if has("g:user_defined_functions_sourced")
+    finish
+endif
+
 function! g:IsInstalled(...)
     for bin in a:000
         if !executable(bin)
@@ -38,10 +42,13 @@ endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-function! DeleteTrailingWhiteSpace()
-    let l:save_cursor = getpos(".")
-    let l:old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', l:save_cursor)
-    call setreg('/', l:old_query)
+function! EchoWarn(msg)
+    echohl WarningMsg
+    echon "Warning"
+    echohl None
+    echon ': ' a:msg
 endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:user_defined_functions_sourced = 1

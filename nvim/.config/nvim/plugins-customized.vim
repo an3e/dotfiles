@@ -1,4 +1,6 @@
 let s:plugins_base_dir=expand('~/.config/nvim/plugged/')
+let s:functions_path=expand('~/.config/nvim/functions.vim')
+execute 'source' . s:functions_path
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -24,7 +26,7 @@ if isdirectory(s:plugins_base_dir . 'vim-startify')
     let g:startify_session_persistence = 1  " save sessions on exit
     let g:startify_bookmarks = [ {'v': '~/.config/nvim/init.vim'}, {'z': '~/.zshrc'} ]
 else
-    echoerr 'Missing plugin [vim-startify]!'
+    call EchoWarn('Missing plugin [vim-startify]!')
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -34,7 +36,7 @@ if isdirectory(s:plugins_base_dir . 'vim-polyglot')
     let g:cpp_class_scope_highlight = 1
     let g:cpp_member_variable_highlight = 1 " not sure if it has some effect
 else
-    echoerr 'Missing plugin [vim-polyglot]!'
+    call EchoWarn('Missing plugin [vim-polyglot]!')
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -43,7 +45,7 @@ if isdirectory(s:plugins_base_dir . 'indentLine')
     let g:indentLine_char = '┊'
     let g:indentLine_conceallevel = 1
 else
-    echoerr 'Missing plugin [indentLine]!'
+    call EchoWarn('Missing plugin [indentLine]!')
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -71,7 +73,7 @@ if isdirectory(s:plugins_base_dir . 'vim-gutentags')
     nnoremap <leader>3 <C-]>
     nnoremap <leader>§ <C-t>
 else
-    echoerr 'Missing plugin [vim-gutenptags]!'
+    call EchoWarn('Missing plugin [vim-gutenptags]!')
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -81,7 +83,7 @@ if isdirectory(s:plugins_base_dir . 'vim-better-whitespace')
     let g:strip_whitespace_on_save=1
     let g:strip_whitespace_confirm=0
 else
-    echoerr 'Missing plugin [vim-better-whitespace]!'
+    call EchoWarn('Missing plugin [vim-better-whitespace]!')
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -96,7 +98,7 @@ if isdirectory(s:plugins_base_dir . 'ultisnips')
     let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
     let g:UltiSnipsSnippetDirectories=['UltiSnips']
 else
-    echoerr 'Missing plugin [ultisnips]!'
+    call EchoWarn('Missing plugin [ultisnips]!')
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -120,7 +122,7 @@ if isdirectory(s:plugins_base_dir . 'YouCompleteMe')
     nnoremap <leader>6 :YcmCompleter GetType<CR>
     nnoremap <leader>9 :YcmCompleter FixIt<CR>
 else
-    echoerr 'Missing plugin [YouCompleteMe]!'
+    call EchoWarn('Missing plugin [YouCompleteMe]!')
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -184,7 +186,7 @@ if isdirectory(s:plugins_base_dir . 'fzf.vim')
     nnoremap <leader>fy :Filetypes<CR>
     nnoremap <leader>fw :Windows<CR>
 else
-    echoerr 'Missing plugin [fzf.vim]!'
+    call EchoWarn('Missing plugin [fzf.vim]!')
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -239,7 +241,7 @@ if isdirectory(s:plugins_base_dir . 'vim-clang-format')
     autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
     autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 else
-    echoerr 'Missing plugin [vim-clang-format]!'
+    call EchoWarn('Missing plugin [vim-clang-format]!')
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -253,7 +255,7 @@ if isdirectory(s:plugins_base_dir . 'vim-fugitive')
     nnoremap <leader>gs :Gstatus<CR>
     nnoremap <leader>gw :Gwrite<CR>
 else
-    echoerr 'Missing plugin [vim-fugitive]!'
+    call EchoWarn('Missing plugin [vim-fugitive]!')
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -261,6 +263,6 @@ endif
 if isdirectory(s:plugins_base_dir . 'tagbar')
     nnoremap <leader>8 :TagbarToggle<CR>
 else
-    echoerr 'Missing plugin [tagbar]!')
+    call EchoWarn('Missing plugin [tagbar]!')
 endif
 
