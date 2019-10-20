@@ -30,9 +30,9 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if isdirectory(s:plugins_base_dir . 'vim-polyglot')
+    let g:cpp_class_decl_highlight = 1
     let g:cpp_class_scope_highlight = 1
     let g:cpp_member_variable_highlight = 1 " not sure if it has some effect
-    let g:cpp_class_decl_highlight = 1
 else
     echoerr 'Missing plugin [vim-polyglot]!'
 endif
