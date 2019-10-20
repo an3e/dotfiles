@@ -102,7 +102,7 @@ endif
 "
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                           control key shortcuts
+"                                 shortcuts
 "
 " Fast split/window navigation with <Ctrl-hjkl>
 nnoremap <C-h> <C-w><C-h>
@@ -126,9 +126,12 @@ nnoremap <leader>to :tabonly<CR>
 nnoremap <leader>l  :tabnext<CR>
 nnoremap <leader>h  :tabprevious<CR>
 
-" scrolling in buffers
-nnoremap <leader>j <PageDown>
-nnoremap <leader>k <PageUp>
+" scroll one page up/down
+nnoremap <leader>n <PageDown>
+nnoremap <leader>p <PageUp>
+" scroll one half page up/down
+nnoremap <leader>k <C-u>
+nnoremap <leader>j <C-d>
 
 " exit a session
 nnoremap <leader>q :qa<CR>
