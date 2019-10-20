@@ -175,7 +175,7 @@ set smartcase               " case sensitive only if search contains uppercase l
 set nowrap                  " never wrap lines
 
 " scrolling
-set scrolloff=2             " minimum number of lines to show above and below the cursor
+set scrolloff=1             " minimum number of lines to show above and below the cursor
 
 " general
 set mouse=a                 " use mouse
