@@ -55,7 +55,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " convert vim into an awesome IDE
-Plug 'ntpeters/vim-better-whitespace'   " colorize trailing white spaces
 Plug 'sheerun/vim-polyglot'             " syntax highlighting for many languages
 Plug 'shime/vim-livedown'
 Plug 'SirVer/ultisnips'                 " snippets management
@@ -64,7 +63,6 @@ Plug 'Yggdroot/indentLine'              " show indentation levels
 Plug 'rhysd/vim-clang-format'
 
 call plug#end()
-
 
 " Remap leader key
 let mapleader = "\<Space>"
@@ -82,7 +80,7 @@ colorscheme onedark
 "
 let s:plugins_customization_script=expand('~/.config/nvim/plugins-customized.vim')
 if filereadable(s:plugins_customization_script)
-    execute "source " . s:plugins_customization_script
+    execute 'source' . s:plugins_customization_script
 else
     echoerr 'Plugin customization script' . s:plugins_customization_script . ' not readable!'
 endif
@@ -176,6 +174,14 @@ set spelllang=en_us         " change default language of spell checker
 if has("persistent_undo")
     set undofile
     set undodir=~/.config/nvim/undodir
+endif
+
+" turn off swap file creation
+set noswapfile
+
+if has("autocmd")
+    " delete trailing whitespaces before saving the file
+    autocmd FileType c,cpp,sh,txt,vim autocmd BufWritePre <buffer> %s/\s\+$//e
 endif
 
 " fold method
