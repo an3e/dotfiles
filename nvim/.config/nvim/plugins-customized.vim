@@ -142,16 +142,24 @@ if isdirectory(s:plugins_base_dir . 'fzf.vim')
           \ 'header':  ['fg', 'Comment'] }
 
     function! FzfSearchFileNames()
-        let $FZF_DEFAULT_COMMAND = 'ag --depth -1 --hidden --ignore .git -l -g ""'
-        let $FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'
-                    \ --bind ctrl-f:page-down,ctrl-b:page-up"
-        let $BAT_THEME="zenburn"
-        :Files
+        if executable('ag')
+            let $FZF_DEFAULT_COMMAND = 'ag --depth -1 --hidden --ignore .git -l -g ""'
+            let $FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'
+                        \ --bind ctrl-f:page-down,ctrl-b:page-up"
+            let $BAT_THEME="zenburn"
+            :Files
+        else
+            echoerr 'Utility [ag] is not available. Please set it up!'
+        endif
     endfunction
 
     function! FzfSearchFileContent()
-        let $FZF_DEFAULT_OPTS=''
-        :Ag
+        if executable('ag')
+            let $FZF_DEFAULT_OPTS=''
+            :Ag
+        else
+            echoerr 'Utility [ag] is not available. Please set it up!'
+        endif
     endfunction
 
     function! FzfSearchKeyMappings()
