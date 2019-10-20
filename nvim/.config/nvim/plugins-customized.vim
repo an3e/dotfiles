@@ -49,10 +49,11 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 if isdirectory(s:plugins_base_dir . 'vim-gutentags')
-    let g:gutentags_cache_dir = '~/.cache/gutentags'
-    let g:gutentags_project_root = ['.git/']        " '/' to ignore submodules
     let g:gutentags_add_default_project_roots = 0   " do not add any default project roots
+    let g:gutentags_cache_dir = '~/.cache/gutentags'
     let g:gutentags_exclude_filetypes = ['log']
+    let g:gutentags_project_root = ['.git/']        " '/' to ignore submodules
+    let g:gutentags_resolve_symlinks = 1
 
     if exists("g:lightline")
         " make sure gutentags correctly updates it's status in lightline
