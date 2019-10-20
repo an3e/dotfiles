@@ -78,16 +78,6 @@ endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if isdirectory(s:plugins_base_dir . 'vim-better-whitespace')
-    let g:better_whitespace_enabled=1
-    let g:strip_whitespace_on_save=1
-    let g:strip_whitespace_confirm=0
-else
-    call EchoWarn('Missing plugin [vim-better-whitespace]!')
-endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 if isdirectory(s:plugins_base_dir . 'ultisnips')
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
     let g:UltiSnipsExpandTrigger="<C-Space>"
