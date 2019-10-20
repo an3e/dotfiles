@@ -1,28 +1,14 @@
-function! s:is_installed(...)
-    for bin in a:000
-        if !executable(bin)
-            if !exists("l:missing")
-                let l:missing = [ bin ]
-            else
-                call add(l:missing, bin)
-            endif
-        endif
-    endfor
+let s:base_path=expand('~/.config/nvim')
+let s:functions_path=expand(s:base_path . '/functions.vim')
 
-    if exists("l:missing")
-        echoerr 'Following utilities are required but not found in $PATH: ' . string(l:missing)
-        return 0
-    else
-        return 1
-    endif
-endfunction
+execute 'source' s:functions_path
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             plugin management
 "
-let vimplug_path=expand('~/.config/nvim/autoload/plug.vim')
-if !filereadable(vimplug_path)
-    if !s:is_installed('cmake', 'curl', 'git', 'g++', 'pip3', 'python', 'python3')
+let s:vimplug_path=expand(s:base_path . '/autoload/plug.vim')
+if !filereadable(s:vimplug_path)
+    if !IsInstalled('cmake', 'curl', 'git', 'g++', 'pip3', 'python', 'python3')
         echoerr "Continuing without any customizations..."
         finish
     else
@@ -33,6 +19,7 @@ if !filereadable(vimplug_path)
         autocmd VimEnter * PlugInstall --sync
     endif
 endif
+
 call plug#begin(expand('~/.config/nvim/plugged'))
 
 " general
