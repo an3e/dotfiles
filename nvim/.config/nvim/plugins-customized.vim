@@ -22,6 +22,7 @@ endif
 if isdirectory(s:plugins_base_dir . 'vim-startify')
     let g:startify_session_autoload = 1     " load sessions automatically
     let g:startify_session_persistence = 1  " save sessions on exit
+    let g:startify_bookmarks = [ {'v': '~/.config/nvim/init.vim'}, {'z': '~/.zshrc'} ]
 else
     echoerr 'Missing plugin [vim-startify]!'
 endif
