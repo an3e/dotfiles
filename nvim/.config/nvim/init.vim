@@ -1,12 +1,20 @@
 function! s:is_installed(...)
-    let l:rv=1
     for bin in a:000
         if !executable(bin)
-            echo "[ " . bin . " ] is required but not found in \$PATH"
-            let l:rv=0
+            if !exists("l:missing")
+                let l:missing = [ bin ]
+            else
+                call add(l:missing, bin)
+            endif
         endif
     endfor
-    return l:rv
+
+    if exists("l:missing")
+        echoerr 'Following utilities are required but not found in $PATH: ' . string(l:missing)
+        return 0
+    else
+        return 1
+    endif
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -15,8 +23,8 @@ endfunction
 let vimplug_path=expand('~/.config/nvim/autoload/plug.vim')
 if !filereadable(vimplug_path)
     if !s:is_installed('cmake', 'curl', 'git', 'g++', 'pip3', 'python', 'python3')
-        call input("Please install missing utilities and retry again.")
-        execute "q!"
+        echoerr "Continuing without any customizations..."
+        finish
     else
         echo "\nInstalling Vim-Plug...\n"
         exec "!curl -fLo " . vimplug_path . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
