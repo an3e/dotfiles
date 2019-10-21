@@ -92,12 +92,20 @@ endif
 " Fast split/window navigation with <Ctrl-hjkl>
 nnoremap <C-h> <C-w><C-h>
 inoremap <C-h> <C-o><C-w><C-h>
+tnoremap <C-h> <C-\><C-n><C-w>h
 nnoremap <C-j> <C-w><C-j>
 inoremap <C-j> <C-o><C-w><C-j>
+tnoremap <C-j> <C-\><C-n><C-w>j
 nnoremap <C-k> <C-w><C-k>
 inoremap <C-k> <C-o><C-w><C-k>
+tnoremap <C-k> <C-\><C-n><C-w>k
 nnoremap <C-l> <C-w><C-l>
 inoremap <C-l> <C-o><C-w><C-l>
+tnoremap <C-l> <C-\><C-n><C-w>l
+tnoremap <C-j><C-k> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
+" mapping <Esc> in terminal mode disturbs fzf from closing its buffer with <Esc> key
+autocmd! FileType fzf tnoremap <buffer> <Esc> <c-c>
 
 " create new split/tab window
 nnoremap <leader>bh :new<CR>
