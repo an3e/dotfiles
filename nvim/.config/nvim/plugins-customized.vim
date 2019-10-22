@@ -107,7 +107,7 @@ if isdirectory(s:plugins_base_dir . 'YouCompleteMe')
     nnoremap <leader>yf :YcmCompleter GoToDefinition<CR>
     nnoremap <leader>yh :YcmCompleter GoToHeader<CR>
     " open file under cursor / go to symbol declaration/definition.
-    nnoremap <leader>4 :leftabove vertical YcmCompleter GoTo<CR>
+    nnoremap <leader>4 :rightbelow vertical YcmCompleter GoTo<CR>
     nnoremap <leader>5 :YcmForceCompileAndDiagnostics<CR>
     nnoremap <leader>6 :YcmCompleter GetType<CR>
     nnoremap <leader>9 :YcmCompleter FixIt<CR>
