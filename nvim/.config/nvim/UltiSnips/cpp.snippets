@@ -1,8 +1,8 @@
 snippet lic "Snippet for adding license at the beginning of the file"
 ///
 /// \file
-/// \brief 	$1.
-/// \author	Andrei Ehrlich
+/// \brief  $1.
+/// \author Andrei Ehrlich
 ///
 /// Copyright (c) `date +%Y`, GS Elektromedizinische Geraete G. Stemple GmbH.
 /// All rights reserved.
@@ -31,52 +31,52 @@ endsnippet
 
 snippet class "Snippet for adding new class."
 ///
-/// \class	$1.
-/// \brief	${2:Very helpful class description}.
+/// \class  $1.
+/// \brief  ${2:Very helpful class description}.
 ///
 class $1
 {
 public:
-	///
-	/// \brief  Default constructor.
-	///
-	$1() = default;
+    ///
+    /// \brief  Default constructor.
+    ///
+    $1() = default;
 
-	///
-	/// \brief  Destructor.
-	///
-	~$1() = default;
+    ///
+    /// \brief  Destructor.
+    ///
+    ~$1() = default;
 $0
 protected:
 private:
-	///
-	/// \brief  Moving is not allowed.
-	///
-	$1($1&&) = delete;
-	$1& operator=($1&&) = delete;
+    ///
+    /// \brief  Moving is not allowed.
+    ///
+    $1($1&&) = delete;
+    $1& operator=($1&&) = delete;
 
-	///
-	/// \brief  Copying is not allowed.
-	///
-	$1(const $1&) = delete;
-	$1& operator=(const $1&) = delete;
+    ///
+    /// \brief  Copying is not allowed.
+    ///
+    $1(const $1&) = delete;
+    $1& operator=(const $1&) = delete;
 };
 endsnippet
 
 
 snippet struct "Snippet for adding new struct."
 ///
-/// \struct	$1.
-/// \brief	${2:Very helpful struct description}.
+/// \struct $1.
+/// \brief  ${2:Very helpful struct description}.
 ///
 struct $1
 {
-	$1() noexcept = default;
-	$1($1&&) noexcept = default;
-	$1& operator=($1&&) noexcept = default;
-	$1(const $1&) noexcept = default;
-	$1& operator=(const $1&) noexcept = default;
-	~$1() noexcept = default;
+    $1() noexcept = default;
+    $1($1&&) noexcept = default;
+    $1& operator=($1&&) noexcept = default;
+    $1(const $1&) noexcept = default;
+    $1& operator=(const $1&) noexcept = default;
+    ~$1() noexcept = default;
 };
 endsnippet
 
