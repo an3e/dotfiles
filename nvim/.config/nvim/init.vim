@@ -397,6 +397,11 @@ set noswapfile
 " configuration: folding {{{
 set foldmethod=marker
 " }}}
+" configuration: netrw
+let g:netrw_banner = 0      " do not show banner
+let g:netrw_winsize = 20    " width of netrw window (% from width of current window)
+let g:netrw_liststyle = 3   " list entries in tree like style
+
 " apply colorscheme {{{
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " Needs vim >=8.0 or Neovim >= 0.1.5
