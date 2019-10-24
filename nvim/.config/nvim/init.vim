@@ -288,6 +288,7 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " }}}
 call plug#end() " end of plugin installation {{{
 " }}}
+
 " shortcuts: fast split/window navigation with <Ctrl-hjkl> {{{
 nnoremap <C-h> <C-w><C-h>
 inoremap <C-h> <C-o><C-w><C-h>
@@ -344,16 +345,18 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " }}}
+
 " configuration: indentation & whitespaces {{{
+filetype plugin indent on   " indentation based on file type
+set tabstop=4       " number of spaces tab is counted for
+set softtabstop=0   " cause <BS> key to delete correct number of spaces
+set shiftwidth=4    " number of spaces to use for auto indent
 if has("autocmd")
     " delete trailing whitespaces before saving files
     autocmd FileType c,cpp,sh,txt,vim autocmd BufWritePre <buffer> %s/\s\+$//e
+    " use tabs instead spaces for c & cpp filetypes
+    autocmd FileType c,cpp autocmd BufEnter <buffer> setlocal expandtab
 endif
-set expandtab               " expand tabs to spaces
-set tabstop=4               " number of spaces tab is counted for
-set softtabstop=0           " cause <BS> key to delete correct number of spaces
-set shiftwidth=4            " number of spaces to use for auto indent
-filetype plugin indent on   " indentation based on file type
 set listchars+=space:·,trail:·,tab:»·,eol:¶
 " }}}
 " configuration: opening new splits {{{
@@ -404,6 +407,7 @@ endif
 let g:onedark_termcolors = 256
 execute 'colorscheme ' s:color_scheme
 " }}}
+
 packloadall             " load all plugins
 silent! helptags ALL    " load help files for all plugins
 
