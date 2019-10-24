@@ -377,6 +377,7 @@ set smartcase		" case sensitive only if search contains uppercase letter
 " configuration: user interface {{{
 set mouse=a		" use mouse
 set showcmd		" show incomplete commands in the bottom right corner
+set foldmethod=marker
 " scrolling
 set scrolloff=1	" minimum number of lines to show above and below the cursor
 " line wrapping options
@@ -394,9 +395,6 @@ endif
 " }}}
 " configuration: backups {{{
 set noswapfile
-" }}}
-" configuration: folding {{{
-set foldmethod=marker
 " }}}
 " configuration: netrw {{{
 let g:netrw_banner = 0		" do not show banner
