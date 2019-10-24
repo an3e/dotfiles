@@ -108,6 +108,8 @@ nnoremap <leader>gl :Gpull<CR>
 nnoremap <leader>gp :Gpush --force-with-lease<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
+" configuration
+autocmd Filetype gitcommit setlocal spell textwidth=72
 " }}}
 " tags {{{
 Plug 'ludovicchabant/vim-gutentags'
