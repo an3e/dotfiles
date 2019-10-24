@@ -76,10 +76,11 @@ Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'tomasiser/vim-code-dark'
 Plug 'flrnprz/plastic.vim'
 Plug 'romainl/Apprentice'
+let s:color_scheme = 'onedark'
 
 Plug 'itchyny/lightline.vim'            " configurable status line
 let g:lightline = {
-            \ 'colorscheme': 'onedark',
+            \ 'colorscheme': s:color_scheme,
             \ 'active': {
             \ 'left': [ [ 'mode', 'paste' ],
             \           [ 'gitbranch', 'readonly', 'filename', 'modified' ],
@@ -99,6 +100,7 @@ let g:startify_bookmarks = [ {'v': '~/.config/nvim/init.vim'}, {'z': '~/.zshrc'}
 "}}}
 " git {{{
 Plug 'tpope/vim-fugitive'               " best git wrapper of all time :)
+" shortcuts
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gc :Gcommit -s -v<CR>
 nnoremap <leader>gd :Gvdiff<CR>
@@ -398,7 +400,7 @@ if (has("termguicolors"))
 endif
 "
 let g:onedark_termcolors = 256
-colorscheme onedark
+execute 'colorscheme ' s:color_scheme
 " }}}
 packloadall             " load all plugins
 silent! helptags ALL    " load help files for all plugins
