@@ -3,7 +3,7 @@ let mapleader = "\<Space>"
 " }}}
 
 " user defined functions {{{
-function! s:is_installed(...)
+func! s:is_installed(...)
 	for bin in a:000
 		if !executable(bin)
 			if !exists("l:missing")
@@ -20,11 +20,11 @@ function! s:is_installed(...)
 	else
 		return 1
 	endif
-endfunction
+endfunc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-function! s:visual_selection(direction, extra_filter) range
+func! s:visual_selection(direction, extra_filter) range
 let l:saved_reg = @"
 	execute "normal! vgvy"
 
@@ -39,7 +39,16 @@ let l:saved_reg = @"
 
 	let @/ = l:pattern
 	let @" = l:saved_reg
-endfunction
+endfunc
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+func! s:strip_trailing_whitespaces()
+	let l:blacklist = ['markdown']
+	if index(l:blacklist, &ft) < 0
+		%s/\s\+$//e
+	endif
+endfunc
 
 " }}}
 
@@ -362,12 +371,6 @@ filetype plugin indent on	" indentation based on file type
 set tabstop=4				" number of spaces tab is counted for
 set softtabstop=0			" cause <BS> key to delete correct number of spaces
 set shiftwidth=4			" number of spaces to use for auto indent
-if has("autocmd")
-	" delete trailing whitespaces before saving files
-	autocmd FileType c,cpp,sh,txt,vim autocmd BufWritePre <buffer> %s/\s\+$//e
-	" use tabs instead spaces for c & cpp filetypes
-	autocmd FileType c,cpp autocmd BufEnter <buffer> setlocal expandtab
-endif
 set listchars+=space:·,trail:·,tab:»·,eol:¶
 " }}}
 " configuration: highlighting & searching in files {{{
@@ -410,7 +413,15 @@ let g:netrw_banner = 0		" do not show banner
 let g:netrw_winsize = 20	" width of netrw window (% from width of current window)
 let g:netrw_liststyle = 3	" list entries in tree like style
 " }}}
-
+" configuration: adjust file type specific options {{{
+if has("autocmd")
+	" delete trailing whitespaces before saving files
+	autocmd BufWritePre * call s:strip_trailing_whitespaces()
+	" use tabs instead spaces for c & cpp filetypes
+	autocmd FileType c,cpp autocmd BufEnter
+				\ <buffer> setlocal expandtab foldmethod=indent
+endif
+" }}}
 " apply colorscheme {{{
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " Needs vim >=8.0 or Neovim >= 0.1.5
