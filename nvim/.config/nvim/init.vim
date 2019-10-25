@@ -1,6 +1,7 @@
 " init: remap leader key {{{
 let mapleader = "\<Space>"
 " }}}
+
 " user defined functions {{{
 function! s:is_installed(...)
 	for bin in a:000
@@ -23,7 +24,7 @@ endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-function! VisualSelection(direction, extra_filter) range
+function! s:visual_selection(direction, extra_filter) range
 let l:saved_reg = @"
 	execute "normal! vgvy"
 
@@ -41,6 +42,7 @@ let l:saved_reg = @"
 endfunction
 
 " }}}
+
 " automatically install vim-plug {{{
 let s:vimplug_path=expand('~/.config/nvim/autoload/plug.vim')
 if !filereadable(s:vimplug_path)
@@ -199,7 +201,7 @@ nnoremap <leader>fy :Filetypes<CR>
 nnoremap <leader>fw :Windows<CR>
 " }}}
 " convert vim into an awesome IDE {{{
-Plug 'sheerun/vim-polyglot'             " syntax highlighting for many languages
+Plug 'sheerun/vim-polyglot'	" syntax highlighting for many languages
 let g:cpp_class_decl_highlight = 1
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1 " not sure if it has some effect
@@ -307,7 +309,7 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 " shortcuts: return to normal mode in terminal window {{{
 tnoremap <C-j><C-k> <C-\><C-n>
 tnoremap <Esc> <C-\><C-n>
-" mapping <Esc> in terminal mode disturbs fzf from closing its buffer with <Esc> key
+" one exception: <Esc> should close fzf terminal window
 autocmd! FileType fzf tnoremap <buffer> <Esc> <c-c>
 " }}}
 " shortcuts: create new split/tab window {{{
@@ -342,9 +344,17 @@ nnoremap <leader><CR> :nohlsearch<CR>
 " shortcuts: set CWD to folder of the open buffer {{{
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 " }}}
-" shortcuts: searching in visual mode {{{
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+" shortcuts: searching in files {{{
+" Keep search results in the center of screen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
+vnoremap <silent> * :<C-u>call s:visual_selection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call s:visual_selection('', '')<CR>?<C-R>=@/<CR><CR>
 " }}}
 
 " configuration: indentation & whitespaces {{{
@@ -360,10 +370,6 @@ if has("autocmd")
 endif
 set listchars+=space:·,trail:·,tab:»·,eol:¶
 " }}}
-" configuration: opening new splits {{{
-set splitbelow	" put new split windows to the bottom of the current
-set splitright	" put new vsplit windows to the right of the current
-" }}}
 " configuration: highlighting & searching in files {{{
 set number			" show line numbers
 set relativenumber	" show line numbers relative to cursor position
@@ -377,6 +383,9 @@ set smartcase		" case sensitive only if search contains uppercase letter
 " configuration: user interface {{{
 set mouse=a		" use mouse
 set showcmd		" show incomplete commands in the bottom right corner
+" opening new splits
+set splitbelow	" put new split windows to the bottom of the current
+set splitright	" put new vsplit windows to the right of the current
 set foldmethod=marker
 " scrolling
 set scrolloff=1	" minimum number of lines to show above and below the cursor
