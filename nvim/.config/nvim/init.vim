@@ -55,12 +55,12 @@ endfunc
 " automatically install vim-plug {{{
 let s:vimplug_path=expand('~/.config/nvim/autoload/plug.vim')
 if !filereadable(s:vimplug_path)
-	if !s:is_installed('cmake', 'curl', 'git', 'g++', 'pip3', 'python', 'python3')
+	if !s:is_installed('cmake', 'ctags', 'curl', 'git', 'g++', 'pip3', 'python', 'python3')
 		echoerr "Continuing without any customizations..."
 		finish
 	else
 		echo "\nInstalling Vim-Plug...\n"
-		exec "!curl -fLo " . vimplug_path . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+		exec "!curl -fLo " . s:vimplug_path . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 		exec "!python -m pip install setuptools"
 		exec "!pip3 install --upgrade --user pynvim"
 		autocmd VimEnter * PlugInstall --sync
