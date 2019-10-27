@@ -201,7 +201,7 @@ nnoremap <leader>fh :History<CR>
 nnoremap <leader>fl :BLines<CR>
 nnoremap <leader>fm :call FzfSearchKeyMappings()<CR>
 nnoremap <leader>fs :Snippets<CR>
-nnoremap <leader>ft :Tags<CR>
+nnoremap <leader>ft :call fzf#vim#tags(expand('<cword>'))<CR>
 " use preview when FzFiles runs in fullscreen
 command! -nargs=? -bang -complete=dir FzfFiles
 			\ call fzf#vim#files(<q-args>, <bang>0 ? fzf#vim#with_preview('up:65%') : {}, <bang>0)
