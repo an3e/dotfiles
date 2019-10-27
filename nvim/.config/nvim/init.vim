@@ -423,7 +423,7 @@ if has("autocmd")
 	autocmd BufWritePre * call s:strip_trailing_whitespaces()
 	" use tabs instead spaces for c & cpp filetypes
 	autocmd FileType c,cpp autocmd BufEnter
-				\ <buffer> setlocal expandtab foldmethod=indent
+				\ <buffer> setlocal expandtab foldmethod=syntax
 endif
 " }}}
 " apply colorscheme {{{
