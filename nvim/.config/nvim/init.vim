@@ -169,8 +169,12 @@ let g:fzf_colors = {
 function! FzfSearchFileNames()
 	if executable('ag')
 		let $FZF_DEFAULT_COMMAND = 'ag --depth -1 --hidden --ignore .git -l -g ""'
-		let $FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'
-					\ --bind ctrl-f:page-down,ctrl-b:page-up"
+		if !executable('bat')
+			let $FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'
+						\ --bind ctrl-f:page-down,ctrl-b:page-up"
+		else
+			let $FZF_DEFAULT_OPTS="--preview 'cat {}'"
+		endif
 		let $BAT_THEME="zenburn"
 		:Files
 	else
