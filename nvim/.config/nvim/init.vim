@@ -437,6 +437,3 @@ let g:onedark_termcolors = 256
 execute 'colorscheme ' s:color_scheme
 " }}}
 
-packloadall				" load all plugins
-silent! helptags ALL	" load help files for all plugins
-
