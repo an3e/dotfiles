@@ -50,6 +50,7 @@ func! s:strip_trailing_whitespaces()
 	endif
 endfunc
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}}
 
 " automatically install vim-plug {{{
@@ -166,51 +167,96 @@ let g:fzf_colors = {
 			\ 'spinner':['fg', 'Label'],
 			\ 'header':	['fg', 'Comment'] }
 
-function! FzfSearchFileNames()
+func! s:fzf_env_set()
 	if executable('ag')
-		let $FZF_DEFAULT_COMMAND = 'ag --depth -1 --hidden --ignore .git -l -g ""'
-		if !executable('bat')
+		let $FZF_DEFAULT_COMMAND='ag --depth -1 --hidden --ignore .git -l -g ""'
+		if executable('bat')
 			let $FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'
 						\ --bind ctrl-f:page-down,ctrl-b:page-up"
 		else
 			let $FZF_DEFAULT_OPTS="--preview 'cat {}'"
 		endif
-		let $BAT_THEME="zenburn"
-		:Files
 	else
 		echoerr 'Utility [ag] is not available. Please set it up!'
 	endif
-endfunction
+endfunc
 
-function! FzfSearchFileContent()
-	if executable('ag')
-		let $FZF_DEFAULT_OPTS=''
-		:Ag
-	else
-		echoerr 'Utility [ag] is not available. Please set it up!'
-	endif
-endfunction
-
-function! FzfSearchKeyMappings()
+func! s:fzf_env_reset()
 	let $FZF_DEFAULT_OPTS=''
-	:Maps
-endfunction
+	let $FZF_DEFAULT_COMMAND=''
+endfunc
 
-nnoremap <leader>fa :call FzfSearchFileContent()<CR>
-nnoremap <leader>fb :Buffers<CR>
-nnoremap <leader>fc :Colors<CR>
-nnoremap <leader>ff :call FzfSearchFileNames()<CR>
-nnoremap <leader>fg :Commits<CR>
-nnoremap <leader>fh :History<CR>
-nnoremap <leader>fl :BLines<CR>
-nnoremap <leader>fm :call FzfSearchKeyMappings()<CR>
+func! s:fzf_search_colors()
+	call <SID>fzf_env_reset()
+	:Colors
+endfunc
+
+func! s:fzf_search_file_names()
+	call <SID>fzf_env_set()
+	:Files
+endfunc
+
+func! s:fzf_search_file_buffers()
+	call <SID>fzf_env_reset()
+	:Buffers
+endfunc
+
+func! s:fzf_search_file_buffer_lines()
+	call <SID>fzf_env_reset()
+	:BLines
+endfunc
+
+func! s:fzf_search_file_content()
+	call <SID>fzf_env_reset()
+	:Ag
+endfunc
+
+func! s:fzf_search_file_types()
+	call <SID>fzf_env_reset()
+	:Filetypes<CR>
+endfunc
+
+func! s:fzf_search_git_commits()
+	call <SID>fzf_env_reset()
+	:Commits
+endfunc
+
+func! s:fzf_search_git_commits_buffer()
+	call <SID>fzf_env_reset()
+	:BCommits
+endfunc
+
+func! s:fzf_search_history()
+	call <SID>fzf_env_reset()
+	:History
+endfunc
+
+func! s:fzf_search_key_mappings()
+	call <SID>fzf_env_reset()
+	:Maps
+endfunc
+
+func! s:fzf_search_tags()
+	call <SID>fzf_env_reset()
+	call fzf#vim#tags(expand('<cword>'))
+endfunc
+
+nnoremap <leader>fa :call <SID>fzf_search_file_content()<CR>
+nnoremap <leader>fb :call <SID>fzf_search_file_buffers()<CR>
+nnoremap <leader>fc :call <SID>fzf_search_colors()<CR>
+nnoremap <leader>ff :call <SID>fzf_search_file_names()<CR>
+nnoremap <leader>fg :call <SID>fzf_search_git_commits()<CR>
+nnoremap <leader>fh :call <SID>fzf_search_history()<CR>
+nnoremap <leader>fi :call <SID>fzf_search_git_commits_buffer()<CR>
+nnoremap <leader>fl :call <SID>fzf_search_file_buffer_lines()<CR>
+nnoremap <leader>fm :call <SID>fzf_search_key_mappings()<CR>
 nnoremap <leader>fs :Snippets<CR>
-nnoremap <leader>ft :call fzf#vim#tags(expand('<cword>'))<CR>
+nnoremap <leader>ft :call <SID>fzf_search_tags()<CR>
 " use preview when FzFiles runs in fullscreen
 command! -nargs=? -bang -complete=dir FzfFiles
 			\ call fzf#vim#files(<q-args>, <bang>0 ? fzf#vim#with_preview('up:65%') : {}, <bang>0)
 nnoremap <leader>fv :FzfFiles!<CR>
-nnoremap <leader>fy :Filetypes<CR>
+nnoremap <leader>fy :call <SID>fzf_search_file_types()<CR>
 nnoremap <leader>fw :Windows<CR>
 " }}}
 " convert vim into an awesome IDE {{{
