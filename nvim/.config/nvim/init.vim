@@ -95,8 +95,11 @@ let g:lightline = {
 			\ 'colorscheme': s:color_scheme,
 			\ 'active': {
 			\ 'left': [ [ 'mode', 'paste' ],
-			\			[ 'gitbranch', 'readonly', 'filename', 'modified' ],
+			\			[ 'gitbranch', 'readonly', 'filename', 'modified', 'char2hex' ],
 			\			[ 'gutentags' ] ],
+			\ },
+			\ 'component': {
+			\	'char2hex': '0x%B'
 			\ },
 			\ 'component_function': {
 			\	'gitbranch': 'fugitive#head',
