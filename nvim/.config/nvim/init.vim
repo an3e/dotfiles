@@ -169,6 +169,9 @@ let g:fzf_colors = {
 			\ 'marker':	['fg', 'Keyword'],
 			\ 'spinner':['fg', 'Label'],
 			\ 'header':	['fg', 'Comment'] }
+let g:fzf_commits_log_options = '--graph --color=always
+			\ --format="%C(yellow)%h%C(red)%d%C(reset)
+			\ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
 
 func! s:fzf_env_set()
 	if executable('ag')
