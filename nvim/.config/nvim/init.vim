@@ -51,6 +51,30 @@ func! s:strip_trailing_whitespaces()
 endfunc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! s:save_restore_view()
+	let l:blacklist=[]
+
+	if &l:diff | return 0 | endif
+	if &buftype != '' | return 0 | endif
+	if expand('%') =~ '\[.*\]' | return 0 | endif
+	if empty(glob(expand('%:p'))) | return 0 | endif
+	if &modifiable == 0 | return 0 | endif
+	if len($TEMP) && expand('%:p:h') == $TEMP | return 0 | endif
+	if len($TMP) && expand('%:p:h') == $TMP | return 0 | endif
+
+	let l:file_name = expand('%:p')
+	for l:ifile2skip in l:blacklist
+		if l:file_name =~ l:ifile2skip
+			return 0
+		endif
+	endfor
+
+	return 1
+endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " }}}
 
 " automatically install vim-plug {{{
@@ -479,6 +503,14 @@ if has("autocmd")
 				\ <buffer> setlocal expandtab foldmethod=syntax
 endif
 " }}}
+" configuration: save/restore view {{{
+augroup RememberViews
+	autocmd!
+	" automatically save/restore views
+	autocmd BufWritePre,BufWinLeave ?* if s:save_restore_view() | silent! mkview | endif
+	autocmd BufWinEnter ?* if s:save_restore_view() | silent! loadview | endif
+augroup END
+" }}}
 " apply colorscheme {{{
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " Needs vim >=8.0 or Neovim >= 0.1.5
@@ -489,4 +521,3 @@ endif
 let g:onedark_termcolors = 256
 execute 'colorscheme ' s:color_scheme
 " }}}
-
