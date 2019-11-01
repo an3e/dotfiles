@@ -400,8 +400,9 @@ nnoremap <leader>j <C-d>
 nnoremap <leader>q :qa<CR>
 nnoremap <leader>w :conf wqa<CR>
 " }}}
-" shortcuts: toggle whitespaces {{{
+" shortcuts: whitespaces {{{
 nnoremap <leader>7 :set list!<CR>
+nnoremap <leader><TAB> :%retab!<CR>
 " }}}
 " shortcuts: stop highlighting {{{
 nnoremap <leader><CR> :nohlsearch<CR>
