@@ -2,10 +2,10 @@
 ZSH_ANTIGEN_VERSION="v2.2.3"
 ZSH_ANTIGEN_LOCATION="${HOME}/.antigen"
 [[ ! -d "${ZSH_ANTIGEN_LOCATION}" ]] \
-    && git clone https://github.com/zsh-users/antigen.git "${ZSH_ANTIGEN_LOCATION}" \
-    && cd "${ZSH_ANTIGEN_LOCATION}" &>/dev/null \
-    && git checkout "${ZSH_ANTIGEN_VERSION}" &>/dev/null \
-    && cd &>/dev/null
+	&& git clone https://github.com/zsh-users/antigen.git "${ZSH_ANTIGEN_LOCATION}" \
+	&& cd "${ZSH_ANTIGEN_LOCATION}" &>/dev/null \
+	&& git checkout "${ZSH_ANTIGEN_VERSION}" &>/dev/null \
+	&& cd &>/dev/null
 
 ################################################################################
 
@@ -26,10 +26,10 @@ antigen bundle last-working-dir
 antigen bundle tig
 # use OS specific plugins
 case $(cat /etc/os-release | grep ^NAME 2>/dev/null) in
-    *Ubuntu*) antigen bundle ubuntu ;;
-    *Debian*) antigen bundle debian ;;
-    *Arch*)   antigen bundle archlinux ;;
-    *) ;;
+	*Ubuntu*) antigen bundle ubuntu ;;
+	*Debian*) antigen bundle debian ;;
+	*Arch*)   antigen bundle archlinux ;;
+	*) ;;
 esac
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -68,23 +68,23 @@ do_path_prepend()
 ##########################################################################################
 
 do_source() {
-    while [ $# -gt 0 ]
-    do
-        local file_to_source="${1}";
-        shift 1;
+	while [ $# -gt 0 ]
+	do
+		local file_to_source="${1}";
+		shift 1;
 
-        [[ -f "${file_to_source}" ]] || continue;
+		[[ -f "${file_to_source}" ]] || continue;
 
-        source "${file_to_source}";
-    done
+		source "${file_to_source}";
+	done
 }
 
 ################################################################################
 
 do_source \
-    "${HOME}/.zshrc_ext" \
-    "${HOME}/.aliases" \
-    || true
+	"${HOME}/.zshrc_ext" \
+	"${HOME}/.aliases" \
+	|| true
 
 neofetch 2>/dev/null
 

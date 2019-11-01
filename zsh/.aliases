@@ -1,6 +1,7 @@
 which nvim &>/dev/null \
-    && alias vim='nvim' \
-    && alias vimdiff='nvim -d'
+	&& alias vim='nvim' \
+	&& alias vimdiff='nvim -d'
 
-alias gdammit='git commit --amend --no-edit'
+which git &>/dev/null \
+	&& alias gdammit='git commit --amend --no-edit'
 
