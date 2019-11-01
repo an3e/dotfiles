@@ -9,9 +9,10 @@ export COMPLETION_WAITING_DOTS="true"
 which ag &>/dev/null \
     && export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g "' \
     && export FZF_DEFAULT_OPTS="--bind ctrl-f:page-down,ctrl-b:page-up" \
-    && export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+    && export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}" \
+	&& export FZF_CTRL_R_OPTS="--preview-window right:50% --preview 'echo {}'" \
 
-which bat \
+which bat &>/dev/null&>/dev/null  \
     && export BAT_THEME="zenburn"
 
 SCRIPTS_DIR="${HOME}/.scripts"
