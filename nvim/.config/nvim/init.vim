@@ -458,14 +458,12 @@ set nowrap		" never wrap lines
 set spell			" uses English language by default
 set spelllang=en_us	" change default language of spell checker
 " }}}
-" configuration: save undo history {{{
+" configuration: backup & undo history {{{
+set noswapfile
 if has("persistent_undo")
 	set undofile
 	set undodir=~/.config/nvim/undodir
 endif
-" }}}
-" configuration: backups {{{
-set noswapfile
 " }}}
 " configuration: netrw {{{
 let g:netrw_banner = 0		" do not show banner
