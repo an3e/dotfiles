@@ -24,25 +24,6 @@ endfunc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-func! s:visual_selection(direction, extra_filter) range
-let l:saved_reg = @"
-	execute "normal! vgvy"
-
-	let l:pattern = escape(@", "\\/.*'$^~[]")
-	let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-	if a:direction == 'gv'
-		call CmdLine("Ack '" . l:pattern . "' " )
-	elseif a:direction == 'replace'
-		call CmdLine("%s" . '/'. l:pattern . '/')
-	endif
-
-	let @/ = l:pattern
-	let @" = l:saved_reg
-endfunc
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 func! s:strip_trailing_whitespaces()
 	let l:blacklist = ['markdown']
 	if index(l:blacklist, &ft) < 0
@@ -442,9 +423,6 @@ nnoremap * *zz
 nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
-
-vnoremap <silent> * :<C-u>call s:visual_selection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call s:visual_selection('', '')<CR>?<C-R>=@/<CR><CR>
 " }}}
 
 " configuration: indentation & whitespaces {{{
