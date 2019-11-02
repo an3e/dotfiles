@@ -430,7 +430,7 @@ filetype plugin indent on	" indentation based on file type
 set tabstop=4				" number of spaces tab is counted for
 set softtabstop=0			" cause <BS> key to delete correct number of spaces
 set shiftwidth=4			" number of spaces to use for auto indent
-set listchars+=space:·,trail:·,tab:»·,eol:¶
+set listchars+=eol:¶,extends:⇒,precedes:⇐,space:·,tab:»·,trail:·
 " }}}
 " configuration: highlighting & searching in files {{{
 set number			" show line numbers
