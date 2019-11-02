@@ -497,3 +497,5 @@ endif
 let g:onedark_termcolors = 256
 execute 'colorscheme ' s:color_scheme
 " }}}
+
+nnoremap K :vert help <C-R><C-W><CR>
