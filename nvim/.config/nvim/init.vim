@@ -405,7 +405,7 @@ nnoremap <leader>j <C-d>
 nnoremap <leader>q :qa<CR>
 nnoremap <leader>w :conf wqa<CR>
 " }}}
-" shortcuts: whitespaces {{{
+" shortcuts: indentation & white space characters {{{
 nnoremap <leader>7 :set list!<CR>
 nnoremap <leader><TAB> :%retab!<CR>
 " }}}
@@ -425,12 +425,13 @@ nnoremap g* g*zz
 nnoremap g# g#zz
 " }}}
 
-" configuration: indentation & whitespaces {{{
+" configuration: indentation & white space characters {{{
 filetype plugin indent on	" indentation based on file type
 set tabstop=4				" number of spaces tab is counted for
 set softtabstop=0			" cause <BS> key to delete correct number of spaces
 set shiftwidth=4			" number of spaces to use for auto indent
 set listchars+=eol:¶,extends:⇒,precedes:⇐,space:·,tab:»·,trail:·
+set list					" show whitespaces by default
 " }}}
 " configuration: highlighting & searching in files {{{
 set number			" show line numbers
