@@ -160,7 +160,7 @@ nnoremap <leader>8 :TagbarToggle<CR>
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 let g:fzf_nvim_statusline = 0 " disable statusline overwriting
-let g:fzf_layout = { 'down': '~30%' }
+let g:fzf_layout = { 'down': '~35%' }
 let g:fzf_colors = {
 			\ 'fg':		['fg', 'Normal'],
 			\ 'bg':		['bg', 'Normal'],
