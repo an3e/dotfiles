@@ -237,9 +237,14 @@ func! s:fzf_search_git_commits_buffer()
 	:BCommits
 endfunc
 
-func! s:fzf_search_history()
-	call <SID>fzf_env_reset()
+func! s:fzf_search_history_files()
+	call <SID>fzf_env_set()
 	:History
+endfunc
+
+func! s:fzf_search_history_commands()
+	call <SID>fzf_env_reset()
+	:History:
 endfunc
 
 func! s:fzf_search_key_mappings()
@@ -257,10 +262,11 @@ nnoremap <leader>fb :call <SID>fzf_search_file_buffers()<CR>
 nnoremap <leader>fc :call <SID>fzf_search_colors()<CR>
 nnoremap <leader>ff :call <SID>fzf_search_file_names()<CR>
 nnoremap <leader>fg :call <SID>fzf_search_git_commits()<CR>
-nnoremap <leader>fh :call <SID>fzf_search_history()<CR>
+nnoremap <leader>fh :call <SID>fzf_search_history_files()<CR>
 nnoremap <leader>fi :call <SID>fzf_search_git_commits_buffer()<CR>
 nnoremap <leader>fl :call <SID>fzf_search_file_buffer_lines()<CR>
 nnoremap <leader>fm :call <SID>fzf_search_key_mappings()<CR>
+nnoremap <leader>fq :call <SID>fzf_search_history_commands()<CR>
 nnoremap <leader>fs :Snippets<CR>
 nnoremap <leader>ft :call <SID>fzf_search_tags()<CR>
 " use preview when FzFiles runs in fullscreen
