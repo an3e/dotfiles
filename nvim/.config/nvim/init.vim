@@ -481,8 +481,8 @@ let g:netrw_liststyle = 3	" list entries in tree like style
 if has("autocmd")
 	" delete trailing whitespaces before saving files
 	autocmd BufWritePre * call s:strip_trailing_whitespaces()
-	" use tabs instead spaces for c & cpp filetypes
-	autocmd FileType c,cpp autocmd BufEnter
+
+	autocmd FileType c,cpp,idl autocmd BufEnter
 				\ <buffer> setlocal expandtab foldmethod=syntax
 endif
 " }}}
