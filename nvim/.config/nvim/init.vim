@@ -315,55 +315,8 @@ Plug 'Yggdroot/indentLine'
 let g:indentLine_char = '┊'
 let g:indentLine_conceallevel = 1
 
-Plug 'rhysd/vim-clang-format'
-let g:clang_format#command="/usr/bin/clang-format-7"
-let g:clang_format#code_style="llvm"
-let g:clang_format#style_options = {
-	\	"AccessModifierOffset": -4,
-	\	"AlignAfterOpenBracket": "DontAlign",
-	\	"AllowAllParametersOfDeclarationOnNextLine": "true",
-	\	"AllowShortBlocksOnASingleLine": "false",
-	\	"AllowShortCaseLabelsOnASingleLine": "false",
-	\	"AllowShortFunctionsOnASingleLine": "Empty",
-	\	"AlwaysBreakTemplateDeclarations": "true",
-	\	"BinPackArguments": "false",
-	\	"BinPackParameters": "false",
-	\	"BraceWrapping": {
-	\		"AfterClass": "true",
-	\		"AfterControlStatement": "true",
-	\		"AfterEnum": "true",
-	\		"AfterFunction": "true",
-	\		"AfterNamespace": "false",
-	\		"AfterObjCDeclaration": "true",
-	\		"AfterStruct": "true",
-	\		"AfterUnion": "true",
-	\		"BeforeCatch": "true",
-	\		"BeforeElse": "true",
-	\		"IndentBraces": "false" },
-	\	"BreakBeforeBraces": "Custom",
-	\	"BreakConstructorInitializers": "BeforeComma",
-	\	"ColumnLimit": 0,
-	\	"Cpp11BracedListStyle": "true",
-	\	"IncludeBlocks": "Preserve",
-	\	"IndentWidth": 4,
-	\	"IndentCaseLabels": "true",
-	\	"IndentWrappedFunctionNames": "false",
-	\	"MaxEmptyLinesToKeep": 1,
-	\	"NamespaceIndentation": "None",
-	\	"PointerAlignment": "Left",
-	\	"SortIncludes": "false",
-	\	"SpaceBeforeParens": "Never",
-	\	"SpacesInAngles": "false",
-	\	"SpacesInContainerLiterals": "false",
-	\	"SpacesInParentheses": "false",
-	\	"SpacesInSquareBrackets": "false",
-	\	"SortUsingDeclarations": "false",
-	\	"Standard": "Cpp11",
-	\	"TabWidth": 4,
-	\	"UseTab": "Never"
-	\ }
-autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+Plug 'Chiel92/vim-autoformat'
+nnoremap <leader>0 :Autoformat<CR>
 " }}}
 call plug#end() " end of plugin installation {{{
 " }}}
